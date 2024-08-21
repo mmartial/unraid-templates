@@ -6,7 +6,7 @@
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
     <Project>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Project>
     <TemplateURL>https://raw.githubusercontent.com/mmartial/ComfyUI-Nvidia-Docker/main/ComfyUI-Nvidia-Docker.xml</TemplateURL>
-    <Icon>https://avatars.githubusercontent.com/u/121283862</Icon>
+    <Icon>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/img/ComfyUI-Nvidia-Docker.png</Icon>
     <Category>AI: MediaApp:Photos</Category>
     <ExtraSearchTerms>WebUI images generation Stable Diffusion</ExtraSearchTerms>
     <Network>bridge</Network>
