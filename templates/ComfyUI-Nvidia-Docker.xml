@@ -42,7 +42,7 @@ Note: This is a WebUI for the ComfyUI Stable Diffusion tool with a Docker image 
     <DonateText/>
     <DonateLink/>
     <Config Name="WebUI Port" Target="8188" Default="8188" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8188</Config>
-    <Config Name="run directory" Target="/home/comfy/mnt" Default="/mnt/user/appdata/comfyui-nvidia/mnt" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/mnt</Config>
+    <Config Name="run directory" Target="/comfy/mnt" Default="/mnt/user/appdata/comfyui-nvidia/mnt" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/mnt</Config>
     <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
 </Container>
