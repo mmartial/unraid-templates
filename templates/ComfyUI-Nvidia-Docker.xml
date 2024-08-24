@@ -15,23 +15,24 @@
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Overview>
-ComfyUI WebUI Dockerfile with Nvidia support, built from the latest official ComfyUI GitHub release
+ComfyUI WebUI Dockerfile with Nvidia support, built from the latest official ComfyUI GitHub release.
+Install ComfyUI Manager to simplify integration of additional custom nodes.
 
-The tool will create many folders inside the "run directory", among which: HF, data/{input,output,temp}, user, models, custom_nodes
+The tool will create some folders inside the "run directory", among which: HF, ComfyUI and venv
 
 All those folders will be created with the WANTED_UID and WANTED_GID parameters (by default using Unraid's default of 99:100) allowing the end-user to place directly into the folders their checkpoints, unet, lora and other required models.
 
-The initialization script (run at each restart of the container) will do its best to not overwrite existing files (keeping the most recent -- if you are modifying an existing file, it might be safer to rename it; if a new version appears on Comfy's GitHub, your version might get erased) or remove files that are already in the destination.
+The container comes with no weights/models; you need to obtain those and install them in the proper directories under the mount you have selected for the "run directory".
 
-Note that the base container comes with no weights/models; you need to obtain those and install them in the proper directories under the mount you have selected for the "run directory".
-
-Output files will be placed into the data/output folder within that "run directory".
+Output files will be placed into the ComfyUI/output folder within that "run directory".
 
 Please see https://github.com/mmartial/ComfyUI-Nvidia-Docker for further details.&#xD;
 In particular, details about "First time use" (and the "bottle" workflow), noting that Unraid's default YOUR_RUN_DIRECTORY is /mnt/user/appdata/comfyui-nvidia/mnt
 
 Note:&#xD;
-- This is a WebUI for the ComfyUI Stable Diffusion tool with a Docker image which is over 10GB.&#xD;
+- The container requires the Nvidia Driver plugin to be installed on your Unraid server.&#xD;
+- This is a WebUI for the ComfyUI Stable Diffusion tool with a Docker image of over 5GB.&#xD;
+- The container will take a while to start up, as it needs to download the ComfyUI Stable Diffusion tool and install its dependencies, usually adding another 5GB of downloaded content in the venv folder&#xD;
 - The original Docker image is from Nvidia, as such it is governed by the NVIDIA Deep Learning Container License.
     </Overview>
     <WebUI>http://[IP]:[PORT:8188]</WebUI>
