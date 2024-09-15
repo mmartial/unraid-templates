@@ -35,6 +35,15 @@ Note:&#xD;
 - The container will take a while to start up, as it needs to download the ComfyUI Stable Diffusion tool and install its dependencies, usually adding another 5GB of downloaded content in the venv folder&#xD;
 - The original Docker image is from Nvidia, as such it is governed by the NVIDIA Deep Learning Container License.
     </Overview>
+    <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
+    <Date>2021-09-15</Date>
+    <Changes>
+### 20240915
+- Added `COMFY_CMDLINE_XTRA` variable to allow for additional command line arguments when starting ComfyUI (ex: --fast --reserve-vram 2.0 --lowvram). 
+Check the Docker logs if this prevents your container from starting.
+### 20240810
+- Initial release
+    </Changes>
     <WebUI>http://[IP]:[PORT:8188]</WebUI>
     <ExtraParams>--runtime nvidia --gpus all</ExtraParams>
     <PostArgs/>
@@ -46,4 +55,5 @@ Note:&#xD;
     <Config Name="run directory" Target="/comfy/mnt" Default="/mnt/user/appdata/comfyui-nvidia/mnt" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/mnt</Config>
     <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+    <Config Name="COMFY_CMDLINE_XTRA" Target="COMFY_CMDLINE_XTRA" Default="" Mode="" Description="Extra command-line options for ComfyUI" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 </Container>
