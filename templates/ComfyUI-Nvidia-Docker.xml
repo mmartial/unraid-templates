@@ -3,6 +3,18 @@
     <Name>ComfyUI-Nvidia-Docker</Name>
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
+    <Branch>
+        <Tag>ubuntu24_cuda12.5.1</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.5.1 (latest)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu22_cuda12.4.1</Tag>
+        <TagDescription>Ubuntu 22.04 with CUDA 12.4.1</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu22_cuda12.3.2</Tag>
+        <TagDescription>Ubuntu 22.04 with CUDA 12.3.2</TagDescription>
+    </Branch>
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
     <Project>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Project>
     <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/ComfyUI-Nvidia-Docker.xml</TemplateURL>
@@ -30,10 +42,11 @@ Please see https://github.com/mmartial/ComfyUI-Nvidia-Docker for further details
 In particular, details about "First time use" (and the "bottle" workflow), noting that Unraid's default YOUR_RUN_DIRECTORY is /mnt/user/appdata/comfyui-nvidia/mnt
 
 Note:&#xD;
-- The container requires the Nvidia Driver plugin to be installed on your Unraid server.&#xD;
-- This is a WebUI for the ComfyUI Stable Diffusion tool with a Docker image of over 5GB.&#xD;
+- The container requires the Nvidia Driver plugin to be installed on your Unraid server. Usually that plugin will get you access to a CUDA driver with support for the latest tag available for this container.&#xD;
+- This is a WebUI for the ComfyUI Stable Diffusion tool with a Docker image of usually over 4GB.&#xD;
 - The container will take a while to start up, as it needs to download the ComfyUI Stable Diffusion tool and install its dependencies, usually adding another 5GB of downloaded content in the venv folder&#xD;
 - The original Docker image is from Nvidia, as such it is governed by the NVIDIA Deep Learning Container License.
+- There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
     <Date>2025-01-09</Date>
