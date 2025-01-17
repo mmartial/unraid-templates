@@ -49,9 +49,9 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-01-09</Date>
+    <Date>2025-01-16</Date>
     <Changes>
-### 2925916
+### 2025016
 - Added multiple builds for different base Ubuntu OS and CUDA combinations (with independent venv) + ffmpeg into the base container for some video workflows
 ### 20250109
 - Integrated `SECURITY_LEVELS` within the docker arguments + added libGL into the base container.
