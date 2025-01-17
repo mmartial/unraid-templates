@@ -51,7 +51,7 @@ Note:&#xD;
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
     <Date>2025-01-16</Date>
     <Changes>
-### 2025016
+### 20250116
 - Added multiple builds for different base Ubuntu OS and CUDA combinations (with independent venv) + ffmpeg into the base container for some video workflows
 ### 20250109
 - Integrated `SECURITY_LEVELS` within the docker arguments + added libGL into the base container.
