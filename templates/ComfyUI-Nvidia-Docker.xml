@@ -27,19 +27,20 @@
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Overview>
-ComfyUI WebUI Dockerfile with Nvidia support, built from the latest official ComfyUI GitHub release.
-Install ComfyUI Manager to simplify integration of additional custom nodes.
+ComfyUI WebUI Dockerfile with Nvidia support, installing ComfyUI from GitHub.
+Also installs ComfyUI Manager to simplify integration of additional custom nodes.
 
-The tool will create some folders inside the "run directory", among which: HF, ComfyUI and venv
+The "run directory" contains HF, ComfyUI and venv.
+The "basedir" contains input, output and custom_nodes.
 
 All those folders will be created with the WANTED_UID and WANTED_GID parameters (by default using Unraid's default of 99:100) allowing the end-user to place directly into the folders their checkpoints, unet, lora and other required models.
 
 The container comes with no weights/models; you need to obtain those and install them in the proper directories under the mount you have selected for the "run directory".
 
-Output files will be placed into the ComfyUI/output folder within that "run directory".
+Output files will be placed into the basedir/output folder within the "basedir" directory.
 
 Please see https://github.com/mmartial/ComfyUI-Nvidia-Docker for further details.&#xD;
-In particular, details about "First time use" (and the "bottle" workflow), noting that Unraid's default YOUR_RUN_DIRECTORY is /mnt/user/appdata/comfyui-nvidia/mnt
+In particular, details about "First time use" (and the "bottle" workflow), noting that Unraid's default YOUR_BASE_DIRECTORY should be /mnt/user/appdata/comfyui-nvidia/basedir
 
 Note:&#xD;
 - The container requires the Nvidia Driver plugin to be installed on your Unraid server. Usually that plugin will get you access to a CUDA driver with support for the latest tag available for this container.&#xD;
@@ -49,15 +50,16 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-01-16</Date>
+    <Date>2025-02-02</Date>
     <Changes>
+### 20250202
+- Added `BASE_DIRECTORY` variable
 ### 20250116
 - Added multiple builds for different base Ubuntu OS and CUDA combinations (with independent venv) + ffmpeg into the base container for some video workflows
 ### 20250109
 - Integrated `SECURITY_LEVELS` within the docker arguments + added libGL into the base container.
 ### 20240915
-- Added `COMFY_CMDLINE_XTRA` variable to allow for additional command line arguments when starting ComfyUI (ex: --fast --reserve-vram 2.0 --lowvram). 
-Check the Docker logs if this prevents your container from starting.
+- Added `COMFY_CMDLINE_EXTRA` variable to allow for additional command line arguments when starting ComfyUI (ex: --fast --reserve-vram 2.0 --lowvram). Check the Docker logs if this prevents your container from starting.
 ### 20240810
 - Initial release
     </Changes>
@@ -69,9 +71,11 @@ Check the Docker logs if this prevents your container from starting.
     <DonateText/>
     <DonateLink/>
     <Config Name="WebUI Port" Target="8188" Default="8188" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8188</Config>
-    <Config Name="run directory" Target="/comfy/mnt" Default="/mnt/user/appdata/comfyui-nvidia/mnt" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/mnt</Config>
+    <Config Name="run directory (venv, ComfyUI from git, ...)" Target="/comfy/mnt" Default="/mnt/user/appdata/comfyui-nvidia/mnt" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/mnt</Config>
+    <Config Name="basedir directory (models, input, output, custom_nodes)" Target="/basedir" Default="/mnt/user/appdata/comfyui-nvidia/basedir" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/basedir</Config>
     <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
-    <Config Name="COMFY_CMDLINE_XTRA" Target="COMFY_CMDLINE_XTRA" Default="" Mode="" Description="Extra command-line options for ComfyUI" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="COMFY_CMDLINE_EXTRA" Target="COMFY_CMDLINE_EXTRA" Default="" Mode="" Description="Extra command-line options for ComfyUI" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="BASE_DIRECTORY" Target="BASE_DIRECTORY" Default="/basedir" Mode="" Description="Base directory for ComfyUI user directories such as models, input, output and custom_nodes" Type="Variable" Display="hidden" Required="true" Mask="false">/basedir</Config>
     <Config Name="SECURITY_LEVEL" Target="SECURITY_LEVEL" Default="normal" Mode="" Description="Modify the security level for the WebUI, see https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#security-policy for authorized values" Type="Variable" Display="always" Required="true" Mask="false">normal</Config>
 </Container>
