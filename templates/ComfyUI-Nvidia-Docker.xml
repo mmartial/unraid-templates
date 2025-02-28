@@ -50,8 +50,12 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-02-02</Date>
+    <Date>2025-02-27</Date>
     <Changes>
+### 20250227
+- Simplified user switching logic using the `comfytoo` user as the default entry point user that will set up the `comfy` user
+### 20250216
+- Fix issue with empty BASE_DIRECTORY
 ### 20250202
 - Added `BASE_DIRECTORY` variable
 ### 20250116
