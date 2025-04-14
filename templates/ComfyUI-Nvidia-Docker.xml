@@ -4,12 +4,12 @@
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
     <Branch>
-        <Tag>ubuntu24_cuda12.5.1</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.5.1 (current latest)</TagDescription>
+        <Tag>ubuntu24_cuda12.6.3</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (current latest)</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu24_cuda12.6.3</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (next release's latest)</TagDescription>
+        <Tag>ubuntu24_cuda12.5.1</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.5.1</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu22_cuda12.4.1</Tag>
@@ -55,8 +55,11 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-02-27</Date>
+    <Date>2025-04-13</Date>
     <Changes>
+### 20250413
+- Make CUDA 12.6.3 the latest tag
+- Added support for /userscripts_dir and /comfyui-nvidia_config.sh (see README.md)
 ### 20250320
 - Added CUDA 12.6.3 image, which will be the new latest as of the next release
 - Added checks for directory ownership
