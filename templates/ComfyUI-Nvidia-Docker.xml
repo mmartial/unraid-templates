@@ -55,8 +55,11 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-04-13</Date>
+    <Date>2025-04-18</Date>
     <Changes>
+### 20250418
+- use ENTRYPOINT to run the init script: allows for replacement of previously used command line arguments to support command line override
+- Added content in README.md to explain the use of comfytoo user & a section on reinstallation without losing our existing models folder.
 ### 20250413
 - Make CUDA 12.6.3 the latest tag
 - Added support for /userscripts_dir and /comfyui-nvidia_config.sh (see README.md)
