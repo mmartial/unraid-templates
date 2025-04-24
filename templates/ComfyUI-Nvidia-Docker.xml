@@ -8,6 +8,10 @@
         <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (current latest)</TagDescription>
     </Branch>
     <Branch>
+        <Tag>ubuntu24_cuda12.8</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.8 -- needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
+    </Branch>
+    <Branch>
         <Tag>ubuntu24_cuda12.5.1</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 12.5.1</TagDescription>
     </Branch>
@@ -57,6 +61,10 @@ Note:&#xD;
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
     <Date>2025-04-18</Date>
     <Changes>
+### 20250424
+- Removing CUDA 12.8/Blackwell special case: PyTorch 2.7.0 official is released
+- Only re-releasing CUDA 12.8 container
+- Added official 12.8 tag to Unraid release list
 ### 20250418
 - use ENTRYPOINT to run the init script: allows for replacement of previously used command line arguments to support command line override
 - Added content in README.md to explain the use of comfytoo user & a section on reinstallation without losing our existing models folder.
