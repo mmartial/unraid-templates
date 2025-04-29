@@ -60,6 +60,7 @@ Note:&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
     <Date>2025-04-26</Date>
+<!-- DO NOT USE & in text sections, will break XML -->
     <Changes>
 ### 20250426
 - Added `postvenv_script.bash` support
@@ -70,7 +71,7 @@ Note:&#xD;
 - Added official 12.8 tag to Unraid release list
 ### 20250418
 - use ENTRYPOINT to run the init script: allows for replacement of previously used command line arguments to support command line override
-- Added content in README.md to explain the use of comfytoo user & a section on reinstallation without losing our existing models folder.
+- Added content in README.md to explain the use of comfytoo user + a section on reinstallation without losing our existing models folder.
 ### 20250413
 - Make CUDA 12.6.3 the latest tag
 - Added support for /userscripts_dir and /comfyui-nvidia_config.sh (see README.md)
