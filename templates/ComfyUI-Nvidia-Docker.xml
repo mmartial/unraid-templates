@@ -4,23 +4,23 @@
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
     <Branch>
-        <Tag>ubuntu24_cuda12.6.3</Tag>
+        <Tag>ubuntu24_cuda12.6.3-latest</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (current latest)</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu24_cuda12.8</Tag>
+        <Tag>ubuntu24_cuda12.8-latest</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 12.8 -- needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu24_cuda12.5.1</Tag>
+        <Tag>ubuntu24_cuda12.5.1-latest</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 12.5.1</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu22_cuda12.4.1</Tag>
+        <Tag>ubuntu22_cuda12.4.1-latest</Tag>
         <TagDescription>Ubuntu 22.04 with CUDA 12.4.1</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu22_cuda12.3.2</Tag>
+        <Tag>ubuntu22_cuda12.3.2-latest</Tag>
         <TagDescription>Ubuntu 22.04 with CUDA 12.3.2</TagDescription>
     </Branch>
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
