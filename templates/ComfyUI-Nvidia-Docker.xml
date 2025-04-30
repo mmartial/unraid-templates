@@ -50,6 +50,7 @@ Output files will be placed into the basedir/output folder within the "basedir" 
 Please see https://github.com/mmartial/ComfyUI-Nvidia-Docker for further details.&#xD;
 - See details about "latest" tag
 - See details about "First time use" (and the "bottle" workflow), noting that Unraid's default YOUR_BASE_DIRECTORY should be /mnt/user/appdata/comfyui-nvidia/basedir
+- Blackwell users (RTX 50xx) check the README.md for details on how to enable PyTorch 2.7.0 with CUDA 12.8 support: "Blackwell support on Unraid" section
 
 Note:&#xD;
 - The container requires the Nvidia Driver plugin to be installed on your Unraid server. Usually that plugin will get you access to a CUDA driver with support for the latest tag available for this container.&#xD;
