@@ -60,9 +60,12 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-04-26</Date>
+    <Date>2025-05-03</Date>
 <!-- DO NOT USE & in text sections, will break XML -->
     <Changes>
+### 20250503
+- Future proof extras/PyTorch2.7-CUDA12.8.sh
+- Added run/pip_cache and run/tmp folders support
 ### 20250426
 - Added `postvenv_script.bash` support
 - Blackwell users (RTX 50xx) must see README.md for details on how to enable PyTorch 2.7.0 with CUDA 12.8 support
