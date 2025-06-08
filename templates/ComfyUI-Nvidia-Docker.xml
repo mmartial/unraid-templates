@@ -8,6 +8,10 @@
         <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (current latest)</TagDescription>
     </Branch>
     <Branch>
+        <Tag>ubuntu24_cuda12.9-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.9 -- needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
+    </Branch>
+    <Branch>
         <Tag>ubuntu24_cuda12.8-latest</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 12.8 -- needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
     </Branch>
@@ -22,6 +26,10 @@
     <Branch>
         <Tag>ubuntu22_cuda12.3.2-latest</Tag>
         <TagDescription>Ubuntu 22.04 with CUDA 12.3.2</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu22_cuda12.2.2-latest</Tag>
+        <TagDescription>Ubuntu 22.04 with CUDA 12.2.2</TagDescription>
     </Branch>
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
     <Project>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Project>
@@ -60,9 +68,12 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-05-03</Date>
+    <Date>2025-06-07</Date>
 <!-- DO NOT USE & in text sections, will break XML -->
     <Changes>
+### 20250607
+- Added USE_PIPUPGRADE and USE_SOCAT environment variables
+- Added CUDA 12.2.2 and 12.9 images
 ### 20250503
 - Future proof extras/PyTorch2.7-CUDA12.8.sh
 - Added run/pip_cache and run/tmp folders support
@@ -115,4 +126,6 @@ Note:&#xD;
     <Config Name="BASE_DIRECTORY" Target="BASE_DIRECTORY" Default="/basedir" Mode="" Description="Base directory for ComfyUI user directories such as models, input, output and custom_nodes" Type="Variable" Display="advanced" Required="true" Mask="false">/basedir</Config>
     <Config Name="SECURITY_LEVEL" Target="SECURITY_LEVEL" Default="normal" Mode="" Description="Modify the security level for the WebUI, see https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#security-policy for authorized values" Type="Variable" Display="always" Required="true" Mask="false">normal</Config>
     <Config Name="FORCE_CHOWN" Target="FORCE_CHOWN" Default="yes" Mode="" Description="Force change directory ownership as the comfy user during script startup (this process might be slow). This option was added to support users who mount the run and basedir folders onto other hosts which might not respect the UID/GID of the comfy user. Enabled by default on Unraid. To disable, set to an empty value." Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+    <Config Name="USE_PIPUPGRADE" Target="USE_PIPUPGRADE" Default="true" Mode="" Description="new default is to use pip install --upgrade, set to false to use pip install." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="USE_SOCAT" Target="USE_SOCAT" Default="false" Mode="" Description="Use socat to listen on port 8188 and forward to 127.0.0.1:8181 (ie use an alternate port for Comfy to run)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>  
 </Container>
