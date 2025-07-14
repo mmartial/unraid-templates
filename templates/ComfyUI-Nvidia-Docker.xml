@@ -68,9 +68,11 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-06-07</Date>
+    <Date>2025-07-13</Date>
 <!-- DO NOT USE & in text sections, will break XML -->
     <Changes>
+### 20250713
+- Added PREINSTALL_TORCH environment variable which attempts to automatically select the cu128 index-url when CUDA 12.8 (or above) is detected.
 ### 20250607
 - Added USE_PIPUPGRADE and USE_SOCAT environment variables
 - Added CUDA 12.2.2 and 12.9 images
