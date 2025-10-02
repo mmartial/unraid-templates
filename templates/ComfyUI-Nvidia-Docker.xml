@@ -75,7 +75,8 @@ Note:&#xD;
 - Added additional libraries to the base image to support some often-used custom nodes 
 - Added userscripts_dir script for onnxruntime 
 ### 20250817
-- Added automatic PyTorch selection for PREINSTALL_TORCH environment variable based on CUDA version + added DISABLE_UPGRADES and PREINSTALL_TORCH_CMD environment variables.
+- Added automatic PyTorch selection for PREINSTALL_TORCH environment variable based on CUDA version
+- Added DISABLE_UPGRADES and PREINSTALL_TORCH_CMD environment variables
 ### 20250713
 - Added PREINSTALL_TORCH environment variable which attempts to automatically select the cu128 index-url when CUDA 12.8 (or above) is detected.
 ### 20250607
@@ -93,7 +94,8 @@ Note:&#xD;
 - Added official 12.8 tag to Unraid release list
 ### 20250418
 - use ENTRYPOINT to run the init script: allows for replacement of previously used command line arguments to support command line override
-- Added content in README.md to explain the use of comfytoo user + a section on reinstallation without losing our existing models folder.
+- Added content in README.md to explain the use of comfytoo user
+- Added a section on reinstallation without losing our existing models folder.
 ### 20250413
 - Make CUDA 12.6.3 the latest tag
 - Added support for /userscripts_dir and /comfyui-nvidia_config.sh (see README.md)
@@ -109,9 +111,11 @@ Note:&#xD;
 ### 20250202
 - Added BASE_DIRECTORY variable
 ### 20250116
-- Added multiple builds for different base Ubuntu OS and CUDA combinations (with independent venv) + ffmpeg into the base container for some video workflows
+- Added multiple builds for different base Ubuntu OS and CUDA combinations (with independent venv)
+- Added ffmpeg into the base container for some video workflows
 ### 20250109
-- Integrated SECURITY_LEVELS within the docker arguments + added libGL into the base container.
+- Integrated SECURITY_LEVELS within the docker arguments
+- Added libGL into the base container
 ### 20240915
 - Added COMFY_CMDLINE_EXTRA variable to allow for additional command line arguments when starting ComfyUI (ex: --fast --reserve-vram 2.0 --lowvram). Check the Docker logs if this prevents your container from starting.
 ### 20240810
