@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Smart Gallery for ComfyUI</Name>
+    <Repository>mmartial/smart-comfyui-gallery</Repository>
+    <Registry>https://hub.docker.com/r/mmartial/smart-comfyui-gallery</Registry>
+    <Support>https://github.com/biagiomaf/smart-comfyui-gallery/issues</Support>
+    <Project>https://github.com/biagiomaf/smart-comfyui-gallery</Project>
+    <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/smart-comfyui-gallery.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/img/smart-comfyui-gallery.png</Icon>
+    <Category>AI: MediaApp:Photos</Category>
+    <Network>docker</Network>
+    <Requires/>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Overview>
+Smart Gallery for ComfyUI.&#xD;
+
+A fast, beautiful, and mobile-friendly gallery to organize and manage all files generated with ComfyUI, including images and videos in any format.&#xD;
+Features full management tools, Workflow Download, Node Summary, and support for nested folders.&#xD;
+Works standalone, even when ComfyUI is not running.
+    </Overview>
+    <Readme>https://github.com/biagiomaf/smart-comfyui-gallery</Readme>
+    <Date>2025-11-24</Date>
+<!-- DO NOT USE & in text sections, will break XML -->
+    <Changes>
+Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHANGELOG.md
+### 1.41 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41
+- Initial docker release
+    </Changes>
+    <WebUI>http://[IP]:[PORT:8189]</WebUI>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled/>
+    <DonateText/>
+    <DonateLink/>
+    <Config Name="WebUI Port" Target="8189" Default="8189" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8189</Config>
+    <Config Name="SmartGallery directory" Target="/mnt/SmartGallery" Default="/mnt/user/appdata/smart-comfyui-gallery" Mode="rw" Description="Location to store SmartGallery data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/smart-comfyui-gallery</Config>
+    <Config Name="ComfyUI input directory" Target="/mnt/input" Default="/mnt/user/appdata/comfyui-nvidia/basedir/input" Mode="rw" Description="Location to find ComfyUI input data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/basedir/input</Config>
+    <Config Name="ComfyUI output directory" Target="/mnt/output" Default="/mnt/user/appdata/comfyui-nvidia/basedir/output" Mode="rw" Description="Location to find ComfyUI output data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/basedir/output</Config>
+    <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content in mounted folders (should allow deletion of files)" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+    <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content in mounted folders (should allow deletion of files)" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+    <Config Name="THUMBNAIL_WIDTH" Target="THUMBNAIL_WIDTH" Default="300" Mode="" Description="Width (in pixels) of the generated thumbnails" Type="Variable" Display="always" Required="true" Mask="false">300</Config>
+    <Config Name="WEBP_ANIMATED_FPS" Target="WEBP_ANIMATED_FPS" Default="16.0" Mode="" Description="Assumed frame rate for animated WebP files" Type="Variable" Display="always" Required="true" Mask="false">16.0</Config>
+    <Config Name="PAGE_SIZE" Target="PAGE_SIZE" Default="100" Mode="" Description="Maximum number of files to load initially before showing a Load more button" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+    <Config Name="BATCH_SIZE" Target="BATCH_SIZE" Default="500" Mode="" Description="Number of files to process at once during database sync" Type="Variable" Display="always" Required="true" Mask="false">500</Config>
+    <Config Name="BASE_SMARTGALLERY_PATH" Target="BASE_SMARTGALLERY_PATH" Default="/mnt/SmartGallery" Mode="" Description="Target for SmartGallery directory mount, do not modify" Type="Variable" Display="advanced" Required="true" Mask="false">/mnt/SmartGallery</Config>
+    <Config Name="BASE_INPUT_PATH" Target="BASE_INPUT_PATH" Default="/mnt/input" Mode="" Description="Target for ComfyUI input directory mount, do not modify" Type="Variable" Display="advanced" Required="true" Mask="false">/mnt/input</Config>
+    <Config Name="BASE_OUTPUT_PATH" Target="BASE_OUTPUT_PATH" Default="/mnt/output" Mode="" Description="Target for ComfyUI output directory mount, do not modify" Type="Variable" Display="advanced" Required="true" Mask="false">/mnt/output</Config>
+</Container>
