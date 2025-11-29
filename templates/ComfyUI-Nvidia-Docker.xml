@@ -60,6 +60,7 @@ The container comes with no weights/models; you need to obtain those and install
 Output files will be placed into the basedir/output folder within the "basedir" directory.
 
 Please see https://github.com/mmartial/ComfyUI-Nvidia-Docker for further details.&#xD;
+- Recommending setting USE_UV to true to use uv instead of pip
 - See details about "latest" tag
 - See details about "First time use" (and the "bottle" workflow), noting that Unraid's default YOUR_BASE_DIRECTORY should be /mnt/user/appdata/comfyui-nvidia/basedir
 - GTX 10xx users should use the ubuntu22_cuda12.6.3-latest tag and check the README.md for recommendations on how to run the container.
@@ -73,9 +74,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-10-05</Date>
-<!-- DO NOT USE & in text sections, will break XML -->
+    <Date>2025-11-29</Date>
     <Changes>
+### 20251129
+- Extended uv integration (including UV_TORCH_BACKEND) into userscripts_dir
 ### 20251122
 - Added USE_UV environment variable to use uv instead of pip
 ### 20251005
