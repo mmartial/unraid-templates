@@ -32,7 +32,6 @@ Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHA
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
-    <DateInstalled/>
     <DonateText/>
     <DonateLink/>
     <Config Name="WebUI Port" Target="8189" Default="8189" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8189</Config>
