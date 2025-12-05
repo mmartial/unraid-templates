@@ -7,7 +7,7 @@
     <Project>https://github.com/jittering/traefik-kop</Project>
     <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/traefik-kop.xml</TemplateURL>
     <Icon>https://avatars.githubusercontent.com/u/74472772?s=48</Icon>
-    <Category>Network Services:DNS</Category>
+    <Category>Network:DNS</Category>
     <Network>docker</Network>
     <Requires>Traefik, Redis (or Valkey)</Requires>
     <MyIP/>
