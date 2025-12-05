@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Traefik-Kop</Name>
+    <Repository>ghcr.io/jittering/traefik-kop:latest</Repository>
+    <Registry>https://github.com/jittering/traefik-kop/pkgs/container/traefik-kop</Registry>
+    <Support>https://github.com/jittering/traefik-kop/issues</Support>
+    <Project>https://github.com/jittering/traefik-kop</Project>
+    <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/traefik-kop.xml</TemplateURL>
+    <Icon>https://avatars.githubusercontent.com/u/74472772?s=48</Icon>
+    <Category>Network Services:DNS</Category>
+    <Network>docker</Network>
+    <Requires>Traefik, Redis (or Valkey)</Requires>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Overview>
+A dynamic docker to redis to traefik discovery agent.&#xD;
+
+Solves the problem of running a non-Swarm/Kubernetes multi-host cluster with a single public-facing traefik instance.
+
+traefik-kop solves this problem by using the same traefik docker-provider logic. 
+It reads the container labels from the local docker node and publishes them to a given redis instance. 
+Simply configure your traefik node with a redis provider and point it to the same instance, as in the diagram in the project's README.
+
+This is just an Unraid template for the traefik-kop docker image published by the author on GitHub.
+The project has no WebUI.
+
+See the "Propagating labels from Docker instances not on the Traefik host" section of https://www.gkr.one/blg-20240831-traefik for an example of usage (some default values are the same as the example).
+
+Extra environment variables added to reflect the project README's "Configuration" section.
+Feel free to delete environment variables you don't need in the template below.
+
+Recommended to keep at minimum: KOP_HOSTNAME, REDIS_ADDR, BIND_IP.
+    </Overview>
+    <Readme>https://github.com/jittering/traefik-kop</Readme>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker Socket (read-only) access to find the docker containers and labels automatically.." Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="KOP_HOSTNAME" Target="KOP_HOSTNAME" Default="foo" Mode="" Description="Hostname to identify this node in redis" Type="Variable" Display="always" Required="true" Mask="false">foo</Config>
+    <Config Name="REDIS_ADDR" Target="REDIS_ADDR" Default="192.168.222.11:6379" Mode="" Description="Redis address" Type="Variable" Display="always" Required="true" Mask="false">192.168.222.11:6379</Config>
+    <Config Name="BIND_IP" Target="BIND_IP" Default="192.168.222.99" Mode="" Description="IP address to bind services to" Type="Variable" Display="always" Required="true" Mask="false">192.168.222.99</Config>
+    <Config Name="REDIS_USER" Target="REDIS_USER" Default="default" Mode="" Description="Redis user" Type="Variable" Display="always" Required="true" Mask="false">default</Config>
+    <Config Name="REDIS_PASS" Target="REDIS_PASS" Default="" Mode="" Description="Redis password (if needed, delete if not)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="REDIS_DB" Target="REDIS_DB" Default="0" Mode="" Description="Redis DB number" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+    <Config Name="REDIS_TTL" Target="REDIS_TTL" Default="0" Mode="" Description="Redis TTL (in seconds)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+    <Config Name="KOP_POLL_INTERVAL" Target="KOP_POLL_INTERVAL" Default="60" Mode="" Description="Poll interval for refreshing container list" Type="Variable" Display="always" Required="true" Mask="false">60</Config>
+</Container>
