@@ -3,7 +3,7 @@
     <Name>Traefik-Kop</Name>
     <Repository>ghcr.io/jittering/traefik-kop:latest</Repository>
     <Registry>https://github.com/jittering/traefik-kop/pkgs/container/traefik-kop</Registry>
-    <Support>https://github.com/jittering/traefik-kop/issues</Support>
+    <Support>https://github.com/mmartial/unraid-templates/issues</Support>
     <Project>https://github.com/jittering/traefik-kop</Project>
     <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/traefik-kop.xml</TemplateURL>
     <Icon>https://avatars.githubusercontent.com/u/74472772?s=48</Icon>
