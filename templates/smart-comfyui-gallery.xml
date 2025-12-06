@@ -21,10 +21,11 @@ Features full management tools, Workflow Download, Node Summary, and support for
 Works standalone, even when ComfyUI is not running.
     </Overview>
     <Readme>https://github.com/biagiomaf/smart-comfyui-gallery</Readme>
-    <Date>2025-11-24</Date>
-<!-- DO NOT USE & in text sections, will break XML -->
+    <Date>2025-12-05</Date>
     <Changes>
 Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHANGELOG.md
+### 1.14.1
+- Added FORCE_CHOWN option
 ### 1.41 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41
 - Initial docker release
     </Changes>
@@ -40,6 +41,7 @@ Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHA
     <Config Name="ComfyUI output directory" Target="/mnt/output" Default="/mnt/user/appdata/comfyui-nvidia/basedir/output" Mode="rw" Description="Location to find ComfyUI output data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comfyui-nvidia/basedir/output</Config>
     <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content in mounted folders (should allow deletion of files)" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content in mounted folders (should allow deletion of files)" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+    <Config Name="FORCE_CHOWN" Target="FORCE_CHOWN" Default="true" Mode="" Description="Set to true to force chown of the BASE_SMARTGALLERY_PATH folder only" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="THUMBNAIL_WIDTH" Target="THUMBNAIL_WIDTH" Default="300" Mode="" Description="Width (in pixels) of the generated thumbnails" Type="Variable" Display="always" Required="true" Mask="false">300</Config>
     <Config Name="WEBP_ANIMATED_FPS" Target="WEBP_ANIMATED_FPS" Default="16.0" Mode="" Description="Assumed frame rate for animated WebP files" Type="Variable" Display="always" Required="true" Mask="false">16.0</Config>
     <Config Name="PAGE_SIZE" Target="PAGE_SIZE" Default="100" Mode="" Description="Maximum number of files to load initially before showing a Load more button" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
