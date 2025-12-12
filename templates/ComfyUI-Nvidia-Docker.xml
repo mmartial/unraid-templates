@@ -74,8 +74,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-11-29</Date>
+    <Date>2025-12-11</Date>
     <Changes>
+### 20251211
+- Updated ComfyUI Manager config.ini path: it is recommended to see Issue 92 for more details.
 ### 20251129
 - Extended uv integration (including UV_TORCH_BACKEND) into userscripts_dir
 ### 20251122
