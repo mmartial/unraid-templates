@@ -21,10 +21,12 @@ Features full management tools, Workflow Download, Node Summary, and support for
 Works standalone, even when ComfyUI is not running.
     </Overview>
     <Readme>https://github.com/biagiomaf/smart-comfyui-gallery</Readme>
-    <Date>2025-12-05</Date>
+    <Date>2025-12-17</Date>
     <Changes>
 Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHANGELOG.md
-### 1.14.1
+### 1.51 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.51
+- Added Search and Filtering
+### 1.14.1 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.14.1
 - Added FORCE_CHOWN option
 ### 1.41 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41
 - Initial docker release
