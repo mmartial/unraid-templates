@@ -26,7 +26,7 @@ Works standalone, even when ComfyUI is not running.
 Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHANGELOG.md
 ### 1.51 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.51
 - Added Search and Filtering
-### 1.14.1 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.14.1
+### 1.41.1 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41.1
 - Added FORCE_CHOWN option
 ### 1.41 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41
 - Initial docker release
