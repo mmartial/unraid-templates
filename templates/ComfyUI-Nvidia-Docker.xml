@@ -74,8 +74,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-12-11</Date>
+    <Date>2025-12-19</Date>
     <Changes>
+### 20251219
+- Added `USE_NEW_MANAGER` and `ENABLE_MANAGER_LEGACY_UI` to support new Manager introduced in Comfy 0.5.
 ### 20251211
 - Updated ComfyUI Manager config.ini path: it is recommended to see Issue 92 for more details.
 ### 20251129
@@ -147,11 +149,15 @@ Note:&#xD;
     <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content in run directory" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
     <Config Name="USE_UV" Target="USE_UV" Default="false" Mode="" Description="Use uv instead of pip" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
+    <Config Name="USE_NEW_MANAGER" Target="USE_NEW_MANAGER" Default="true" Mode="" Description="Use new ComfyUI Manager" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="ENABLE_MANAGER_LEGACY_UI" Target="ENABLE_MANAGER_LEGACY_UI" Default="false" Mode="" Description="Enable legacy UI for ComfyUI Manager" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
     <Config Name="COMFY_CMDLINE_EXTRA" Target="COMFY_CMDLINE_EXTRA" Default="" Mode="" Description="Extra command-line options for ComfyUI" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="BASE_DIRECTORY" Target="BASE_DIRECTORY" Default="/basedir" Mode="" Description="Base directory for ComfyUI user directories such as models, input, output and custom_nodes" Type="Variable" Display="advanced" Required="true" Mask="false">/basedir</Config>
     <Config Name="SECURITY_LEVEL" Target="SECURITY_LEVEL" Default="normal" Mode="" Description="Modify the security level for the WebUI, see https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#security-policy for authorized values" Type="Variable" Display="always" Required="true" Mask="false">normal</Config>
     <Config Name="FORCE_CHOWN" Target="FORCE_CHOWN" Default="true" Mode="" Description="Force change directory ownership as the comfy user during script startup (this process might be slow). This option was added to support users who mount the run and basedir folders onto other hosts which might not respect the UID/GID of the comfy user. Enabled by default on Unraid. To disable, set to an empty value." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="DISABLE_UPGRADES" Target="DISABLE_UPGRADES" Default="false" Mode="" Description="Disable container start upgrades of python pacakges (also disables USE_PIPUPGRADE). All updates must be performed using ComfyUI Manager." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
     <Config Name="USE_PIPUPGRADE" Target="USE_PIPUPGRADE" Default="true" Mode="" Description="new default is to use pip install --upgrade, set to false to use pip install." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
-    <Config Name="USE_SOCAT" Target="USE_SOCAT" Default="false" Mode="" Description="Use socat to listen on port 8188 and forward to 127.0.0.1:8181 (ie use an alternate port for Comfy to run)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>  
+    <Config Name="USE_SOCAT" Target="USE_SOCAT" Default="false" Mode="" Description="Use socat to listen on port 8188 and forward to 127.0.0.1:8181 (ie use an alternate port for Comfy to run)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+    <Config Name="NETWORK_MODE" Target="NETWORK_MODE" Default="personal_cloud" Mode="" Description="Required to be set to personal_cloud to allow custom nodes installation" Type="Variable" Display="advanced" Required="false" Mask="false">personal_cloud</Config>
+    
 </Container>
