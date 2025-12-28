@@ -8,6 +8,10 @@
         <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (current latest) -- last version to support GTX 10xx GPUs</TagDescription>
     </Branch>
     <Branch>
+        <Tag>ubuntu24_cuda13.1-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 13.1</TagDescription>
+    </Branch>
+    <Branch>
         <Tag>ubuntu24_cuda13.0-latest</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 13.0</TagDescription>
     </Branch>
@@ -53,6 +57,9 @@ Also installs ComfyUI Manager to simplify integration of additional custom nodes
 The "run directory" contains HF, ComfyUI and venv.
 The "basedir" contains input, output and custom_nodes.
 
+The ComfyUI "Manager" is installed to simplify integration of additional custom nodes and their updates.
+The "Manager" is also used to update ComfyUI to more recent versions.
+
 All those folders will be created with the WANTED_UID and WANTED_GID parameters (by default using Unraid's default of 99:100) allowing the end-user to place directly into the folders their checkpoints, unet, lora and other required models.
 
 The container comes with no weights/models; you need to obtain those and install them in the proper directories under the mount you have selected for the "run directory".
@@ -74,8 +81,11 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-12-19</Date>
+    <Date>2025-12-28</Date>
     <Changes>
+### 20251228
+- Address a FutureWarning: remove pynvml in favor of nvidia-ml-py
+- Note Ubuntu 22.04 images will be deprecated in 2026 (no date set yet)
 ### 20251219
 - Added `USE_NEW_MANAGER` and `ENABLE_MANAGER_LEGACY_UI` to support new Manager introduced in Comfy 0.5.
 ### 20251211
