@@ -81,8 +81,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2025-12-28</Date>
+    <Date>2025-12-30</Date>
     <Changes>
+### 20251230
+- Fix pynvml uninstallation
 ### 20251229
 - Changed git origin for ComfyUI
 - Renamed older images
