@@ -4,8 +4,8 @@
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
     <Branch>
-        <Tag>ubuntu24_cuda12.6.3-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.6.3 (current latest) -- last version to support GTX 10xx GPUs</TagDescription>
+        <Tag>ubuntu24_cuda12.6-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.6 (current latest) -- last version to support GTX 10xx GPUs</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda13.1-latest</Tag>
@@ -24,20 +24,20 @@
         <TagDescription>Ubuntu 24.04 with CUDA 12.8 -- minimum CUDA version needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu24_cuda12.5.1-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.5.1</TagDescription>
+        <Tag>ubuntu24_cuda12.5-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.5</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu22_cuda12.4.1-latest</Tag>
-        <TagDescription>Ubuntu 22.04 with CUDA 12.4.1</TagDescription>
+        <Tag>ubuntu22_cuda12.4-latest</Tag>
+        <TagDescription>Ubuntu 22.04 with CUDA 12.4</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu22_cuda12.3.2-latest</Tag>
-        <TagDescription>Ubuntu 22.04 with CUDA 12.3.2</TagDescription>
+        <Tag>ubuntu22_cuda12.3-latest</Tag>
+        <TagDescription>Ubuntu 22.04 with CUDA 12.3</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu22_cuda12.2.2-latest</Tag>
-        <TagDescription>Ubuntu 22.04 with CUDA 12.2.2</TagDescription>
+        <Tag>ubuntu22_cuda12.2-latest</Tag>
+        <TagDescription>Ubuntu 22.04 with CUDA 12.2</TagDescription>
     </Branch>
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
     <Project>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Project>
@@ -83,6 +83,9 @@ Note:&#xD;
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
     <Date>2025-12-28</Date>
     <Changes>
+### 20251229
+- Changed git origin for ComfyUI
+- Renamed older images
 ### 20251228
 - Address a FutureWarning: remove pynvml in favor of nvidia-ml-py
 - Note Ubuntu 22.04 images will be deprecated in 2026 (no date set yet)
