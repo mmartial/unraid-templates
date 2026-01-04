@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Smart Gallery for ComfyUI</Name>
-    <Repository>mmartial/smart-comfyui-gallery</Repository>
+    <Repository>biagiomaf/smart-comfyui-gallery</Repository>
     <Registry>https://hub.docker.com/r/mmartial/smart-comfyui-gallery</Registry>
     <Support>https://github.com/biagiomaf/smart-comfyui-gallery/issues</Support>
     <Project>https://github.com/biagiomaf/smart-comfyui-gallery</Project>
     <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/smart-comfyui-gallery.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/img/smart-comfyui-gallery.png</Icon>
+    <Icon>https://raw.githubusercontent.com/biagiomaf/smart-comfyui-gallery/refs/heads/main/assets/logo.png</Icon>
     <Category>AI: MediaApp:Photos</Category>
     <Network>docker</Network>
     <Requires/>
