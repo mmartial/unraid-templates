@@ -33,6 +33,11 @@ Feel free to delete environment variables you don't need in the template below.
 Recommended to keep at minimum: KOP_HOSTNAME, REDIS_ADDR, BIND_IP.
     </Overview>
     <Readme>https://github.com/jittering/traefik-kop</Readme>
+    <Date>2025-12-05</Date>
+    <Changes>
+### 20251205
+- Added to Unraid CA
+    </Changes>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
