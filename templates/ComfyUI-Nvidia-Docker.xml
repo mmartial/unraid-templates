@@ -81,8 +81,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2026-01-04</Date>
+    <Date>2026-01-10</Date>
     <Changes>
+### 20260110
+- Fixing git origin to point to the new repository
 ### 20260104
 - Reversing git origin to point to the old repository until the transition is completed
 ### 20251230
