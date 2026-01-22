@@ -81,8 +81,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2026-01-10</Date>
+    <Date>2026-01-21</Date>
     <Changes>
+### 20260121
+- Adding TORCH_LOCK to lock a specific version of PyTorch, Torch Vision and Torch Audio -- Must set the CUDA backend to use
 ### 20260110
 - Fixing git origin to point to the new repository
 ### 20260104
@@ -173,6 +175,7 @@ Note:&#xD;
     <Config Name="COMFY_CMDLINE_EXTRA" Target="COMFY_CMDLINE_EXTRA" Default="" Mode="" Description="Extra command-line options for ComfyUI" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="BASE_DIRECTORY" Target="BASE_DIRECTORY" Default="/basedir" Mode="" Description="Base directory for ComfyUI user directories such as models, input, output and custom_nodes" Type="Variable" Display="advanced" Required="true" Mask="false">/basedir</Config>
     <Config Name="SECURITY_LEVEL" Target="SECURITY_LEVEL" Default="normal" Mode="" Description="Modify the security level for the WebUI, see https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#security-policy for authorized values" Type="Variable" Display="always" Required="true" Mask="false">normal</Config>
+    <Config Name="TORCH_LOCK" Target="TORCH_LOCK" Default="" Mode="" Description="Locks the version of PyTorch, Torch Vision and Torch Audio to the provided string. See Project README for example" Type="Variable" Display="always" Required="true" Mask="false"></Config>
     <Config Name="FORCE_CHOWN" Target="FORCE_CHOWN" Default="true" Mode="" Description="Force change directory ownership as the comfy user during script startup (this process might be slow). This option was added to support users who mount the run and basedir folders onto other hosts which might not respect the UID/GID of the comfy user. Enabled by default on Unraid. To disable, set to an empty value." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
     <Config Name="DISABLE_UPGRADES" Target="DISABLE_UPGRADES" Default="false" Mode="" Description="Disable container start upgrades of python pacakges (also disables USE_PIPUPGRADE). All updates must be performed using ComfyUI Manager." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
     <Config Name="USE_PIPUPGRADE" Target="USE_PIPUPGRADE" Default="true" Mode="" Description="new default is to use pip install --upgrade, set to false to use pip install." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
