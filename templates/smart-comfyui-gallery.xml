@@ -14,22 +14,22 @@
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Overview>
-Smart Gallery for ComfyUI.&#xD;
+SmartGallery DAM: the local-first Digital Asset Manager.&#xD;
 
 A fast, beautiful, and mobile-friendly gallery to organize and manage all files generated with ComfyUI, including images and videos in any format.&#xD;
 Features full management tools, Workflow Download, Node Summary, and support for nested folders.&#xD;
 Works standalone, even when ComfyUI is not running.
+
+Search 50,000 generations by prompt, model, LoRA, or comments in milliseconds.
+Organize your gallery seamlessly across physical folders and virtual collections.
+Share curated work with clients without exposing a single node, and let them rate and comment on your creations.
+Compare two generations side-by-side with an automatic parameter diff.
+Cull batches from your laptop or also from your phone while ComfyUI is still generating.
     </Overview>
     <Readme>https://github.com/biagiomaf/smart-comfyui-gallery</Readme>
-    <Date>2025-12-17</Date>
+    <Date>2025-04-08</Date>
     <Changes>
 Full Changelog: https://github.com/biagiomaf/smart-comfyui-gallery/blob/main/CHANGELOG.md
-### 1.51 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.51
-- Added Search and Filtering
-### 1.41.1 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41.1
-- Added FORCE_CHOWN option
-### 1.41 -- https://github.com/biagiomaf/smart-comfyui-gallery/releases/tag/1.41
-- Initial docker release
     </Changes>
     <WebUI>http://[IP]:[PORT:8189]</WebUI>
     <ExtraParams/>
