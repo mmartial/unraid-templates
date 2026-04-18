@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Smart Gallery for ComfyUI</Name>
-    <Repository>biagiomaf/smart-comfyui-gallery</Repository>
+    <Repository>mmartial/smart-comfyui-gallery</Repository>
     <Registry>https://hub.docker.com/r/mmartial/smart-comfyui-gallery</Registry>
     <Support>https://github.com/biagiomaf/smart-comfyui-gallery/issues</Support>
     <Project>https://github.com/biagiomaf/smart-comfyui-gallery</Project>
