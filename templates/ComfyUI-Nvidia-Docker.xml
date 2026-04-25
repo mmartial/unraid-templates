@@ -45,7 +45,7 @@
     <Icon>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/img/ComfyUI-Nvidia-Docker.png</Icon>
     <Category>AI: MediaApp:Photos</Category>
     <ExtraSearchTerms>WebUI images generation Stable Diffusion</ExtraSearchTerms>
-    <Network>bridge</Network>
+    <Network>docker</Network>
     <Requires>**Nvidia Driver plugin**</Requires>
     <MyIP/>
     <Shell>bash</Shell>
