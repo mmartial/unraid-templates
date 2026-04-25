@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hermes WebUI</Name>
+    <Repository>ghcr.io/nesquena/hermes-webui:latest</Repository>
+    <Registry>https://ghcr.io/nesquena/hermes-webui/</Registry>
+    <Support>https://github.com/nesquena/hermes-webui</Support>
+    <Project>https://github.com/nesquena/hermes-webui</Project>
+    <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/hermes-webui.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/nesquena/hermes-webui/refs/heads/master/static/favicon.svg</Icon>
+    <Category>AI</Category>
+    <Network>docker</Network>
+    <WebUI>http://[IP]:[PORT:8787]</WebUI>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <ExtraParams/>
+    <Requires>A running "Hermes Agent" from the same maintainer</Requires>
+    <PostArgs/>
+    <Overview>
+Hermes Agent is a sophisticated autonomous agent that lives on your server, accessed via a terminal or messaging apps, that remembers what it learns and gets more capable the longer it runs.&#xD;
+
+Hermes WebUI is a lightweight web app interface in your browser for Hermes Agent. Full parity with the CLI experience - everything you can do from a terminal, you can do from this UI.&#xD;
+
+Layout: three-panel. Left sidebar for sessions and navigation, center for chat, right for workspace file browsing. Model, profile, and workspace controls live in the composer footer — always visible while composing. A circular context ring shows token usage at a glance. All settings and session tools are in the Hermes Control Center (launcher at the sidebar bottom).&#xD;
+
+This template uses the official Hermes WebUI docker image, and it is configured to run using specified WANTED_UID and WANTED_GID environment variables&#xD;
+
+If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
+    </Overview>
+    <Readme>https://github.com/nesquena/hermes-webui</Readme>
+    <Date>2026-04-18</Date>
+    <Changes>
+This template is based on the official Hermes WebUI Docker image, updates are pulled from that image.&#xD;
+20260418: Added to Unraid CA
+    </Changes>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Config Name="WebUI Port" Target="8787" Default="8787" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8787</Config>
+    <Config Name="HERMES_WEBUI_HOST" Target="HERMES_WEBUI_HOST" Default="0.0.0.0" Mode="" Description="Host to use for WebUI" Type="Variable" Display="advanced" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="HERMES_WEBUI_PORT" Target="HERMES_WEBUI_PORT" Default="8787" Mode="tcp" Description="Port to use for WebUI within the container. Do not modify" Type="Variable" Display="advanced" Required="true" Mask="false">8787</Config>
+
+    <Config Name="WANTED_UID" Target="WANTED_UID" Default="99" Mode="" Description="UID to use for content" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+    <Config Name="WANTED_GID" Target="WANTED_GID" Default="100" Mode="" Description="GID to use for content" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+
+    <Config Name="HERMES_HOME" Target="HERMES_HOME" Default="/home/hermeswebui/.hermes" Mode="" Description="Home directory for Hermes data (WebUI expects a slightly different location)" Type="Variable" Display="always" Required="true" Mask="false">/home/hermeswebui/.hermes</Config>
+    <Config Name="HERMES_HOME Unraid location" Target="/home/hermeswebui/.hermes" Default="/mnt/user/appdata/hermes-agent/hermes-home" Mode="rw" Description="Location where the container stores all user data (config, API keys, sessions, skills, memories)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent/hermes-home</Config>
+
+    <Config Name="HERMES_WORKSPACE" Target="HERMES_WORKSPACE" Default="/home/hermeswebui/workspace" Mode="" Description="Workspace directory for Hermes data" Type="Variable" Display="always" Required="true" Mask="false">/home/hermeswebui/workspace</Config>
+    <Config Name="HERMES_WORKSPACE Unraid location" Target="/home/hermeswebui/workspace" Default="/mnt/user/appdata/hermes-agent/workspace" Mode="rw" Description="Location of Hermes workspace. Multiple workspaces can be created; duplicate this entry for each workspace and give it a new name" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent/workspace</Config>
+
+    <Config Name="HERMES_WEBUI_STATE_DIR" Target="HERMES_WEBUI_STATE_DIR" Default="/home/hermeswebui/.hermes/webui" Mode="" Description="Directory to use for WebUI state. Will be created within the already mountedHermes data folder" Type="Variable" Display="advanced" Required="true" Mask="false">/home/hermeswebui/.hermes/webui</Config>
+
+    <Config Name="HERMES_WEBUI_PASSWORD" Target="HERMES_WEBUI_PASSWORD" Default="hermes" Mode="" Description="Password for WebUI access (delete to disable) (default: hermes)" Type="Variable" Display="always" Required="false" Mask="true">hermes</Config>
+
+    <Config Name="Hermes Shared Source Volume" Target="/home/hermeswebui/.hermes/hermes-agent" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="always" Required="true" Mask="false">hermes_shared_volume</Config>
+</Container>

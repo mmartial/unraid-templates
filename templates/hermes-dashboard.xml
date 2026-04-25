@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hermes Dashboard</Name>
+    <Repository>nousresearch/hermes-agent:latest</Repository>
+    <Registry>https://hub.docker.com/r/nousresearch/hermes-agent/</Registry>
+    <Support>https://github.com/NousResearch/hermes-agent</Support>
+    <Project>https://hermes-agent.nousresearch.com/</Project>
+    <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/hermes-dashboard.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/NousResearch/hermes-agent/main/assets/banner.png</Icon>
+    <Category>AI</Category>
+    <Network>docker</Network>
+    <WebUI>http://[IP]:[PORT:9119]</WebUI>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <ExtraParams/>
+    <Requires>A running "Hermes Agent" from the same maintainer</Requires>
+    <PostArgs>dashboard --port 9119 --host 0.0.0.0 --no-open --insecure</PostArgs>
+    <Overview>
+Hermes Agent is a local, self-improving AI agent built by Nous Research, with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, and builds a deepening model of who you are across sessions.&#xD;
+
+This template uses the official Hermes Agent docker image, and it is configured to run the agent's Web Dashboard using the HERMES_UID and HERMES_GID environment variables, a browser-based UI for managing your Hermes Agent installation API keys, sessions, skills, update hermes, and more.&#xD;
+
+Warning: the dashboard is meant to be used locally, you will get access to your API keys. It is not recommended to expose it to the internet as it doesn't have strong security measures in place. As always, Tailscale is a good option for secure remote access.&#xD;
+
+It is encouraged to spend time reading https://hermes-agent.nousresearch.com/docs/ to understand the project and its capabilities, and to configure it properly for your use case. This template will expose the Web Dashboard to configure the agent (which will be give you access to its setting, including your API keys), but it won't give you access to the agent's "brain" (the file where it stores its knowledge and skills) or to the CLI. You can find instructions to use both in the project documentation.&#xD;
+
+Familiarity with docker exec might be required to configure the agent itself, but the dashboard should be enough to configure it and monitor its activity. &#xD;
+
+If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
+    </Overview>
+    <Readme>https://hermes-agent.nousresearch.com/docs/user-guide/features/web-dashboard</Readme>
+    <Date>2026-04-18</Date>
+    <Changes>
+This template is based on the official Hermes Agent Docker image, updates are pulled from that image.&#xD;
+20260418: Added to Unraid CA
+    </Changes>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Config Name="Dashboard Port" Target="9119" Default="9119" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">9119</Config>
+
+    <Config Name="HERMES_UID" Target="HERMES_UID" Default="99" Mode="" Description="UID to use for content" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+    <Config Name="HERMES_GID" Target="HERMES_GID" Default="100" Mode="" Description="GID to use for content" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+
+    <Config Name="HERMES_HOME" Target="HERMES_HOME" Default="/home/hermes/.hermes" Mode="" Description="Home directory for Hermes data" Type="Variable" Display="always" Required="true" Mask="false">/home/hermes/.hermes</Config>
+    <Config Name="HERMES_HOME Unraid location" Target="/home/hermes/.hermes" Default="/mnt/user/appdata/hermes-agent/hermes-home" Mode="rw" Description="Location where the container stores all user data (config, API keys, sessions, skills, memories)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent/hermes-home</Config>
+
+    <Config Name="GATEWAY_HEALTH_URL" Target="GATEWAY_HEALTH_URL" Default="http://hermes-agent:8642/health" Mode="" Description="URL (IP, Docker and Port) of the gateway health endpoint (if you modified the default Gateway port, or local container name, adapt this value -- to get the running container name, from a termainal, run: docker container ls)" Type="Variable" Display="always" Required="true" Mask="false">http://HermesAgent:8642/health</Config>
+
+    <Config Name="Hermes Shared Source Volume" Target="/opt/hermes" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="always" Required="true" Mask="false">hermes_shared_volume</Config>
+</Container>
