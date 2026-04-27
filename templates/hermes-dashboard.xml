@@ -48,5 +48,5 @@ This template is based on the official Hermes Agent Docker image, updates are pu
 
     <Config Name="GATEWAY_HEALTH_URL" Target="GATEWAY_HEALTH_URL" Default="http://hermes-agent:8642/health" Mode="" Description="URL (IP, Docker and Port) of the gateway health endpoint (if you modified the default Gateway port, or local container name, adapt this value -- to get the running container name, from a termainal, run: docker container ls)" Type="Variable" Display="always" Required="true" Mask="false">http://HermesAgent:8642/health</Config>
 
-    <Config Name="Hermes Shared Source Volume" Target="/opt/hermes" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="always" Required="true" Mask="false">hermes_shared_volume</Config>
+    <Config Name="Hermes Shared Source Volume" Target="/opt/hermes" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume (do not change: using a folder path will not work) that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="advanced" Required="true" Mask="false">hermes_shared_volume</Config>
 </Container>

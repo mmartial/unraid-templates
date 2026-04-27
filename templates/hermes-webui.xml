@@ -53,5 +53,5 @@ This template is based on the official Hermes WebUI Docker image, updates are pu
 
     <Config Name="HERMES_WEBUI_PASSWORD" Target="HERMES_WEBUI_PASSWORD" Default="hermes" Mode="" Description="Password for WebUI access (delete to disable) (default: hermes)" Type="Variable" Display="always" Required="false" Mask="true">hermes</Config>
 
-    <Config Name="Hermes Shared Source Volume" Target="/home/hermeswebui/.hermes/hermes-agent" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="always" Required="true" Mask="false">hermes_shared_volume</Config>
+    <Config Name="Hermes Shared Source Volume" Target="/home/hermeswebui/.hermes/hermes-agent" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume (do not change: using a folder path will not work) that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="advanced" Required="true" Mask="false">hermes_shared_volume</Config>
 </Container>
