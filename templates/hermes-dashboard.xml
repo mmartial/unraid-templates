@@ -27,6 +27,8 @@ It is encouraged to spend time reading https://hermes-agent.nousresearch.com/doc
 
 Familiarity with docker exec might be required to configure the agent itself, but the dashboard should be enough to configure it and monitor its activity. &#xD;
 
+Please see https://github.com/mmartial/unraid-templates/issues/2#issuecomment-4327179027 for a note about the need to use a Docker shared volume.
+
 If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
     </Overview>
     <Readme>https://hermes-agent.nousresearch.com/docs/user-guide/features/web-dashboard</Readme>
