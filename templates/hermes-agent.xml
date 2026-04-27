@@ -23,6 +23,8 @@ This template uses the official Hermes Agent docker image, and it is configured 
 It will not expose a WebUI, despite having an exposed port which allows API access to the agent. Two external WebUI templates: "Hermes Dashboard" and "Hermes WebUI" are also available from the same maintainer.&#xD;
 This template uses a custom network for the additional services to see one another and a shared volume to store Hermes sources, which allows the other Hermes templates to access them.&#xD;
 
+Please see https://github.com/mmartial/unraid-templates/ for deployment notes.
+
 It is encouraged to spend time reading https://hermes-agent.nousresearch.com/docs/ to understand the project and its capabilities, and to configure it properly for your use case.&#xD;
 
 Familiarity with docker exec might be required to configure the agent itself. The container should start with the HermesAgent name, use the following command to get access to the hermes command (to configure/test it):&#xD; 

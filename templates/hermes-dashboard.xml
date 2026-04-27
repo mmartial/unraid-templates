@@ -21,13 +21,13 @@ Hermes Agent is a local, self-improving AI agent built by Nous Research, with a 
 
 This template uses the official Hermes Agent docker image, and it is configured to run the agent's Web Dashboard using the HERMES_UID and HERMES_GID environment variables, a browser-based UI for managing your Hermes Agent installation API keys, sessions, skills, update hermes, and more.&#xD;
 
+Please see https://github.com/mmartial/unraid-templates/ for deployment notes.
+
 Warning: the dashboard is meant to be used locally, you will get access to your API keys. It is not recommended to expose it to the internet as it doesn't have strong security measures in place. As always, Tailscale is a good option for secure remote access.&#xD;
 
 It is encouraged to spend time reading https://hermes-agent.nousresearch.com/docs/ to understand the project and its capabilities, and to configure it properly for your use case. This template will expose the Web Dashboard to configure the agent (which will be give you access to its setting, including your API keys), but it won't give you access to the agent's "brain" (the file where it stores its knowledge and skills) or to the CLI. You can find instructions to use both in the project documentation.&#xD;
 
 Familiarity with docker exec might be required to configure the agent itself, but the dashboard should be enough to configure it and monitor its activity. &#xD;
-
-Please see https://github.com/mmartial/unraid-templates/issues/2#issuecomment-4327179027 for a note about the need to use a Docker shared volume.
 
 If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
     </Overview>
