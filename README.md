@@ -24,6 +24,8 @@
 
 ## Hermes
 
+(Advanced Deployment/Virtual Machine alternative: if you are considering running Hermes in its own VM, check [Hermes in a VM](https://www.gkr.one/blg-20260405-openclaw-hermes))
+
 Important: To share content across all 3 Docker images, we must use a named Docker volume.
 With a named volume, when you start a container and mount a new, empty named volume to a directory that already contains data within the container image, Docker automatically copies the existing files from the image into the volume.
 This "auto-copy" feature does not work with bind mounts (linking a specific folder on your host: if you bind mount an empty host folder to /app/data, the container's folder will appear empty).
@@ -64,6 +66,6 @@ Available components:
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool itself or the underlying Docker container, use [https://github.com/nesquena/hermes-webui/issues](https://github.com/nesquena/hermes-webui/issues)
 
-## Misc:  Unraid template howto
+## Misc: Unraid template howto
 
-[https://www.gkr.one/kb-unraid-dev]https://www.gkr.one/kb-unraid-dev)
+[My Unraid Template Development notes](https://www.gkr.one/kb-unraid-dev)
