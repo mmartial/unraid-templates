@@ -61,7 +61,7 @@ Available components:
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool itself or the underlying Docker container, use [https://github.com/nousresearch/hermes-agent/issues](https://github.com/nousresearch/hermes-agent/issues)
 
-- [Hermes WenUI](https://github.com/nesquena/hermes-webui)
+- [Hermes WebUI](https://github.com/nesquena/hermes-webui)
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool itself or the underlying Docker container, use [https://github.com/nesquena/hermes-webui/issues](https://github.com/nesquena/hermes-webui/issues)
