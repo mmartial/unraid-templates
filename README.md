@@ -43,7 +43,7 @@ To get access to the `hermes` command line (for configuration, update, etc):
 
 ```bash
 # From unraid host shell
-docker exec --user 99:100 -it HermesAgent bash
+docker exec --user 99:100 -it Hermes-Agent bash
 
 # Within container
 source .venv/bin/activate
