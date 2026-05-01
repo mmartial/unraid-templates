@@ -43,6 +43,7 @@ To get access to the `hermes` command line (for configuration, update, etc):
 
 ```bash
 # From unraid host shell
+# use "docker container ls" to find the name of your container if the container name differs
 docker exec --user 99:100 -it Hermes-Agent bash
 
 # Within container

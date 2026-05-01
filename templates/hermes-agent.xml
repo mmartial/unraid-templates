@@ -27,8 +27,8 @@ Please see https://github.com/mmartial/unraid-templates/ for deployment notes.
 
 It is encouraged to spend time reading https://hermes-agent.nousresearch.com/docs/ to understand the project and its capabilities, and to configure it properly for your use case.&#xD;
 
-Familiarity with docker exec might be required to configure the agent itself. The container should start with the HermesAgent name, use the following command to get access to the hermes command (to configure/test it):&#xD; 
-docker exec --user 99:100 -it HermesAgent bash&#xD;
+Familiarity with docker exec might be required to configure the agent itself. The container should start with the Hermes-Agent name (use "docker container ls" to find the name of the container), use the following command to get access to the hermes command (to configure/test it):&#xD; 
+docker exec --user 99:100 -it Hermes-Agent bash&#xD;
 source .venv/bin/activate&#xD;
 hermes&#xD;
 
