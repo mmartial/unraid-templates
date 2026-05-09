@@ -4,8 +4,8 @@
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
     <Branch>
-        <Tag>ubuntu24_cuda12.6-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.6 (current latest) -- last version to support GTX 10xx GPUs</TagDescription>
+        <Tag>ubuntu24_cuda13.2-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 13.2 </TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda13.1-latest</Tag>
@@ -21,7 +21,11 @@
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda12.8-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.8 -- minimum CUDA version needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.8 (current latest) -- minimum CUDA version needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu24_cuda12.6-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.6 (current latest) -- last version to support GTX 10xx GPUs</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda12.5-latest</Tag>
