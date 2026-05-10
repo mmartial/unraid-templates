@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hermes Workspace</Name>
+    <Repository>ghcr.io/outsourc-e/hermes-workspace:latest</Repository>
+    <Registry>https://ghcr.io/outsourc-e/hermes-workspace</Registry>
+    <Support>https://github.com/outsourc-e/hermes-workspace</Support>
+    <Project>https://github.com/outsourc-e/hermes-workspace</Project>
+    <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/hermes-workspace.xml</TemplateURL>
+    <Icon>https://github.com/outsourc-e/hermes-workspace/blob/main/assets/icon.png?raw=true</Icon>
+    <Category>AI</Category>
+    <Network>docker</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Requires>An already running "Hermes Agent" from the same maintainer. Do not start the Workspace without it.</Requires>
+    <PostArgs/>
+    <ExtraParams>--user 99:100</ExtraParams>
+    <Overview>
+Hermes Agent is a sophisticated autonomous agent that lives on your server, accessed via a terminal or messaging apps, that remembers what it learns and gets more capable the longer it runs.&#xD;
+
+Hermes Workspace is "not a chat wrapper. A complete workspace — orchestrate agents, browse memory, manage skills, and control everything from one interface."
+
+For details on the variables used in this template, please refer to https://github.com/outsourc-e/hermes-workspace/blob/main/docker-compose.yml and https://github.com/outsourc-e/hermes-workspace/blob/main/.env.example
+If a new environmentvariable is added to the official image and you want it added to the template, please let me know.
+
+Please see https://github.com/mmartial/unraid-templates/ for deployment notes.
+
+This template uses the official Hermes Workspace docker image.&#xD;
+
+Make sure to add "--user 99:100" to the Extra Parameters to ensure proper permissions for files written on disk.&#xD;
+
+If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
+    </Overview>
+    <Readme>https://github.com/outsourc-e/hermes-workspace</Readme>
+    <Date>2026-04-18</Date>
+    <Changes>
+This template is based on the official Hermes Workspace Docker image, updates are pulled from that image.&#xD;
+20260510: Added to Unraid CA
+    </Changes>
+    <CPUset/>
+    <DonateText/>
+    <DonateLink/>
+    <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+
+    <Config Name="HERMES_API_URL" Target="HERMES_API_URL" Default="http://HermesAgent:8642" Mode="" Description="URL for the Hermes API" Type="Variable" Display="always" Required="true" Mask="false">http://HermesAgent:8642</Config>
+    <Config Name="HERMES_API_TOKEN" Target="HERMES_API_TOKEN" Default="" Mode="" Description="Must match API_SERVER_KEY on the hermes-agent side when that is set" Type="Variable" Display="always" Required="true" Mask="false">bd3db74dd31a13c4f23c137eca542a1ae76d403d5dc6453926820e9e7b9e28a4</Config>
+    <Config Name="HERMES_DASHBOARD_URL" Target="HERMES_DASHBOARD_URL" Default="http://HermesAgent:9119" Mode="" Description="URL for the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">http://HermesAgent:9119</Config>
+
+    <Config Name="Config Unraid location" Target="/.hermes" Default="/mnt/user/appdata/hermes-workspace/config" Mode="rw" Description="Location where the container stores the tool configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-workspace/config</Config>
+    <Config Name="Workspace Unraid location" Target="/workspace" Default="/mnt/user/appdata/hermes-workspace/workspace" Mode="rw" Description="Location where various workspaces can be created" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-workspace/workspace</Config>
+
+    <Config Name="HERMES_PASSWORD" Target="HERMES_PASSWORD" Default="hermes" Mode="" Description="Workspace session password (required) (default: hermes)" Type="Variable" Display="always" Required="false" Mask="false">hermes</Config>
+
+    <Config Name="COOKIE_SECURE" Target="COOKIE_SECURE" Default="0" Mode="" Description="Enable the Secure flag on session cookies when terminated behind HTTPS (reverse proxy / Tailscale Funnel / Cloudflare Tunnel)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+    <Config Name="TRUST_PROXY" Target="TRUST_PROXY" Default="0" Mode="" Description="Trust the reverse proxy when terminated behind HTTPS" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+
+</Container>

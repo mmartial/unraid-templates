@@ -24,20 +24,18 @@
 
 ## Hermes
 
+**20260510 Note**: Following new guidelines for deployment https://hermes-agent.nousresearch.com/docs/user-guide/docker will allow the deletion of the "Dashboard" container; after some permission issues are resolved (https://github.com/NousResearch/hermes-agent/issues/23402), the TUI within the Dashboard should be functional.
+
 (Advanced Deployment/Virtual Machine alternative: if you are considering running Hermes in its own VM, check [Hermes in a VM](https://www.gkr.one/blg-20260405-openclaw-hermes))
 
-Important: To share content across all 3 Docker images, we must use a named Docker volume.
+Important: To share content across the agent and webui docker images, we must use a named Docker volume.
 With a named volume, when you start a container and mount a new, empty named volume to a directory that already contains data within the container image, Docker automatically copies the existing files from the image into the volume.
 This "auto-copy" feature does not work with bind mounts (linking a specific folder on your host: if you bind mount an empty host folder to /app/data, the container's folder will appear empty).
 If the volume already contains data (e.g., from a previous run, an image update, etc), Docker will not overwrite it with the image's content; it will simply mount what is already in the volume. This is important for Hermes in particular, as it is the end-user's responsibility to docker volume rm hermes_shared_volume to get the content to update itself or use hermes update or the WebUI to update it.
 
-The containers MUST be started in the following order:
+Always start the "Hermes Agent" first before starting the other containers.
 
-1. Hermes Agent: this will generate the `hermes_shared_volume` required by the subsequent containers to work
-2. Hermes Dashboard: to configure your API keys, ...
-3. Hermes WebUI: always start last, it REQUIRES the `hermes_shared_volume` to exist and be populated to work
-
-To start a fresh deployment/repair a broken one, you will need to get a shell on your Unraid system and delete the docker shared volume using `docker volume rm hermes_shared_volume`
+To start a fresh deployment/repair a broken Agent/WebUI, you will need to get a shell on your Unraid system and delete the docker shared volume using `docker volume rm hermes_shared_volume`
 
 To get access to the `hermes` command line (for configuration, update, etc):
 
@@ -66,6 +64,11 @@ Available components:
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool itself or the underlying Docker container, use [https://github.com/nesquena/hermes-webui/issues](https://github.com/nesquena/hermes-webui/issues)
+
+- [Hermes Workspace](https://github.com/outsourc-e/hermes-workspace)
+  - Check the project's documentation for usage information.
+  - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
+  - For issues with the tool itself or the underlying Docker container, use [https://github.com/outsourc-e/hermes-workspace/issues](https://github.com/outsourc-e/hermes-workspace/issues)
 
 ## Misc: Unraid template howto
 
