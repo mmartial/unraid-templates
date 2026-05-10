@@ -9,43 +9,57 @@
     <Icon>https://raw.githubusercontent.com/NousResearch/hermes-agent/main/assets/banner.png</Icon>
     <Category>AI</Category>
     <Network>docker</Network>
-    <WebUI>http://[IP]:[PORT:8642]</WebUI>
+    <WebUI>http://[IP]:[PORT:9119]</WebUI>
     <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <ExtraParams/>
-    <Requires>This template does not provide a WebUI, only the core service. Make sure to use the other "Hermes" components from the same maintainer. In particular, you will need the Dashboard to configure your API keys.</Requires>
+    <Requires>This template's WebUI is the Hermes Dashboard. To access the gateway, connect to port 8642 (running in API server mode). Make sure to use the other "Hermes" components from the same maintainer.</Requires>
     <PostArgs>gateway run</PostArgs>
     <Overview>
 Hermes Agent is a local, self-improving AI agent built by Nous Research, with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, and builds a deepening model of who you are across sessions.&#xD;
 
-This template uses the official Hermes Agent docker image, and it is configured to run the agent's Gateway using the HERMES_UID and HERMES_GID environment variables.&#xD;
-It will not expose a WebUI, despite having an exposed port which allows API access to the agent. Two external WebUI templates: "Hermes Dashboard" and "Hermes WebUI" are also available from the same maintainer.&#xD;
+This template uses the official Hermes Agent docker image, and it is configured to run the agent's Gateway and Dashboard using the HERMES_UID and HERMES_GID environment variables.&#xD;
+It will expose the Dashboard WebUI on port 9119 and API acess on port 8642.&#xD;
 This template uses a custom network for the additional services to see one another and a shared volume to store Hermes sources, which allows the other Hermes templates to access them.&#xD;
 
-Please see https://github.com/mmartial/unraid-templates/ for deployment notes.
+Please see https://github.com/mmartial/unraid-templates/ for deployment notes. This template was built following the documentation from https://hermes-agent.nousresearch.com/docs/user-guide/docker. Please refer to the official documentation for available configuration options and instructions to use the agent, the dashboard, and the API.&#xD;
 
 It is encouraged to spend time reading https://hermes-agent.nousresearch.com/docs/ to understand the project and its capabilities, and to configure it properly for your use case.&#xD;
 
-Familiarity with docker exec might be required to configure the agent itself. The container should start with the Hermes-Agent name (use "docker container ls" to find the name of the container), use the following command to get access to the hermes command (to configure/test it):&#xD; 
-docker exec --user 99:100 -it Hermes-Agent bash&#xD;
+Familiarity with docker exec might be required to configure the agent itself. The container should start with the name HermesAgent (use "docker container ls" to find the name of the running container), use the following command to get access to the hermes command (to configure/test it):&#xD; 
+docker exec --user 99:100 -it HermesAgent bash&#xD;
 source .venv/bin/activate&#xD;
 hermes&#xD;
 
 Please see https://github.com/mmartial/unraid-templates/issues/2#issuecomment-4327179027 for a note about the need to use a Docker shared volume.
 
-If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
+Other Hermes templates are also available from the same maintainer.&#xD;
+
+If a new variable is added to the official image and you want it added to the template, please let me know.&#xD;
+If you encounter issues with this template (not the underlying application), please open an issue in the template repository.&#xD;
     </Overview>
     <Readme>https://hermes-agent.nousresearch.com/docs/user-guide/docker</Readme>
-    <Date>2026-04-18</Date>
+    <Date>2026-05-10</Date>
     <Changes>
 This template is based on the official Hermes Agent Docker image, updates are pulled from that image.&#xD;
+20260510: Removed Dashboard since it is now integrated with the Gateway per https://hermes-agent.nousresearch.com/docs/user-guide/docker&#xD;
 20260418: Added to Unraid CA
     </Changes>
     <CPUset/>
     <DonateText/>
     <DonateLink/>
-    <Config Name="Gateway Port" Target="8642" Default="8642" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8642</Config>
+    <Config Name="Gateway Port" Target="8642" Default="8642" Mode="tcp" Description="Internal port for the Hermes Gateway and API server" Type="Port" Display="always" Required="true" Mask="false">8642</Config>
+    <Config Name="Dashboard Port" Target="9119" Default="9119" Mode="tcp" Description="Internal port for the Hermes Dashboard" Type="Port" Display="always" Required="true" Mask="false">9119</Config>
+
+    <Config Name="API_SERVER_ENABLED" Target="API_SERVER_ENABLED" Default="true" Mode="" Description="Enable the API server" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="API_SERVER_HOST" Target="API_SERVER_HOST" Default="0.0.0.0" Mode="" Description="Bind Host for the API server" Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="API_SERVER_KEY" Target="API_SERVER_KEY" Default="" Mode="" Description="API key for the API server. Generate one with: openssl rand -hex 32" Type="Variable" Display="always" Required="true" Mask="false">bd3db74dd31a13c4f23c137eca542a1ae76d403d5dc6453926820e9e7b9e28a4</Config>
+    <Config Name="API_SERVER_CORS_ORIGINS" Target="API_SERVER_CORS_ORIGINS" Default="" Mode="" Description="CORS origins for the API server" Type="Variable" Display="always" Required="true" Mask="false">*</Config>
+
+    <Config Name="HERMES_DASHBOARD" Target="HERMES_DASHBOARD" Default="true" Mode="" Description="Enable the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="HERMES_DASHBOARD_HOST" Target="HERMES_DASHBOARD_HOST" Default="0.0.0.0" Mode="" Description="Bind Host for the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="HERMES_DASHBOARD_TUI" Target="HERMES_DASHBOARD_TUI" Default="1" Mode="" Description="Set to 1 to expose the in-browser Chat tab" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
 
     <Config Name="HERMES_UID" Target="HERMES_UID" Default="99" Mode="" Description="UID to use for content" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="HERMES_GID" Target="HERMES_GID" Default="100" Mode="" Description="GID to use for content" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
