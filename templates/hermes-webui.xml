@@ -27,6 +27,7 @@ Layout: three-panel. Left sidebar for sessions and navigation, center for chat, 
 
 This template uses the official Hermes WebUI docker image, and it is configured to run using specified WANTED_UID and WANTED_GID environment variables&#xD;
 
+If a new variable is added to the official image and you want it added to the template, please let me know.&#xD;
 If you encounter issues with this template (not the underlying application), please open an issue in the template repository, not in the Hermes WebUI repository, as it is not maintained by the same team.&#xD;
     </Overview>
     <Readme>https://github.com/nesquena/hermes-webui</Readme>
@@ -53,7 +54,7 @@ This template is based on the official Hermes WebUI Docker image, updates are pu
 
     <Config Name="HERMES_WEBUI_STATE_DIR" Target="HERMES_WEBUI_STATE_DIR" Default="/home/hermeswebui/.hermes/webui" Mode="" Description="Directory to use for WebUI state. Will be created within the already mountedHermes data folder" Type="Variable" Display="advanced" Required="true" Mask="false">/home/hermeswebui/.hermes/webui</Config>
 
-    <Config Name="HERMES_WEBUI_PASSWORD" Target="HERMES_WEBUI_PASSWORD" Default="hermes" Mode="" Description="Password for WebUI access (delete to disable) (default: hermes)" Type="Variable" Display="always" Required="false" Mask="true">hermes</Config>
+    <Config Name="HERMES_WEBUI_PASSWORD" Target="HERMES_WEBUI_PASSWORD" Default="hermes" Mode="" Description="Password for WebUI access (delete to disable) (default: hermes)" Type="Variable" Display="always" Required="false" Mask="false">hermes</Config>
 
     <Config Name="Hermes Shared Source Volume" Target="/home/hermeswebui/.hermes/hermes-agent" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume (do not change: using a folder path will not work) that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="advanced" Required="true" Mask="false">hermes_shared_volume</Config>
 </Container>
