@@ -69,6 +69,7 @@ Available components:
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool or the underlying Docker container, use [https://github.com/outsourc-e/hermes-workspace/issues](https://github.com/outsourc-e/hermes-workspace/issues)
+  - Note: this container does not require the Docker shared volume. If you do not intend to use Hermes WebUI you can delete it from the "Advanced" settings in the "Hermes Agent" template (and will not have to perform `docker volume rm ...` for example)
 
 ## Misc: Unraid template howto
 
