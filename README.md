@@ -5,26 +5,26 @@
 - [ComfyUI Nvidia Docker](https://github.com/mmartial/ComfyUI-Nvidia-Docker) ([templates/ComfyUI-Nvidia-Docker.xml](templates/ComfyUI-Nvidia-Docker.xml))
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with container itself, use [https://github.com/mmartial/ComfyUI-Nvidia-Docker/issues](https://github.com/mmartial/ComfyUI-Nvidia-Docker/issues)
-  - For issues with ComfyUI itself, use [https://github.com/comfy-org/ComfyUI/issues](https://github.com/comfy-org/ComfyUI/issues)
+  - For issues with the container, use [https://github.com/mmartial/ComfyUI-Nvidia-Docker/issues](https://github.com/mmartial/ComfyUI-Nvidia-Docker/issues)
+  - For issues with ComfyUI, use [https://github.com/comfy-org/ComfyUI/issues](https://github.com/comfy-org/ComfyUI/issues)
 
 ## Smart ComfyUI Gallery
 
 - [Smart ComfyUI Gallery](https://github.com/biagiomaf/smart-comfyui-gallery) ([templates/smart-comfyui-gallery.xml](templates/smart-comfyui-gallery.xml))
   - Check the project's documentation for usage information.
   - For Unraid templates issues use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with the tool itself, use [https://github.com/biagiomaf/smart-comfyui-gallery/issues](https://github.com/biagiomaf/smart-comfyui-gallery/issues)
+  - For issues with the tool, use [https://github.com/biagiomaf/smart-comfyui-gallery/issues](https://github.com/biagiomaf/smart-comfyui-gallery/issues)
 
 ## Traefik Kop
 
 - [Traefik Kop](https://github.com/jittering/traefik-kop) ([templates/traefik-kop.xml](templates/traefik-kop.xml))
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with the tool itself, use [https://github.com/jittering/traefik-kop/issues](https://github.com/jittering/traefik-kop/issues)
+  - For issues with the tool, use [https://github.com/jittering/traefik-kop/issues](https://github.com/jittering/traefik-kop/issues)
 
 ## Hermes
 
-**20260510 Note**: Following new guidelines for deployment https://hermes-agent.nousresearch.com/docs/user-guide/docker will allow the deletion of the "Dashboard" container; after some permission issues are resolved (https://github.com/NousResearch/hermes-agent/issues/23402), the TUI within the Dashboard should be functional.
+**20260510 Note**: New guidelines for deployment https://hermes-agent.nousresearch.com/docs/user-guide/docker allowed us to remove the Dashboard container. If you installed before this release, delete both containers and reinstall the agent. A note on the TUI: after some permission issues are resolved (https://github.com/NousResearch/hermes-agent/issues/23402), the TUI within the Dashboard should be functional.
 
 (Advanced Deployment/Virtual Machine alternative: if you are considering running Hermes in its own VM, check [Hermes in a VM](https://www.gkr.one/blg-20260405-openclaw-hermes))
 
@@ -58,17 +58,17 @@ Available components:
 - [Hermes Agent](https://github.com/nousresearch/hermes-agent) and its Dashboard
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with the tool itself or the underlying Docker container, use [https://github.com/nousresearch/hermes-agent/issues](https://github.com/nousresearch/hermes-agent/issues)
+  - For issues with the tool or the underlying Docker container, use [https://github.com/nousresearch/hermes-agent/issues](https://github.com/nousresearch/hermes-agent/issues)
 
 - [Hermes WebUI](https://github.com/nesquena/hermes-webui)
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with the tool itself or the underlying Docker container, use [https://github.com/nesquena/hermes-webui/issues](https://github.com/nesquena/hermes-webui/issues)
+  - For issues with the tool or the underlying Docker container, use [https://github.com/nesquena/hermes-webui/issues](https://github.com/nesquena/hermes-webui/issues)
 
 - [Hermes Workspace](https://github.com/outsourc-e/hermes-workspace)
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with the tool itself or the underlying Docker container, use [https://github.com/outsourc-e/hermes-workspace/issues](https://github.com/outsourc-e/hermes-workspace/issues)
+  - For issues with the tool or the underlying Docker container, use [https://github.com/outsourc-e/hermes-workspace/issues](https://github.com/outsourc-e/hermes-workspace/issues)
 
 ## Misc: Unraid template howto
 
