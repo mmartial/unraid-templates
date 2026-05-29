@@ -32,7 +32,7 @@ docker exec --user 99:100 -it HermesAgent bash&#xD;
 source .venv/bin/activate&#xD;
 hermes&#xD;
 
-Please see https://github.com/mmartial/unraid-templates/issues/2#issuecomment-4327179027 for a note about the need to use a Docker shared volume.
+Please see https://github.com/mmartial/unraid-templates/issues/2#issuecomment-4327179027 for a note about the need to use a Docker shared volume, and https://github.com/mmartial/unraid-templates/issues/8#issuecomment-4570170067 for details on steps required to update the shared docker volume when the underlying image is updated.
 
 Other Hermes templates are also available from the same maintainer.&#xD;
 
