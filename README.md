@@ -24,7 +24,7 @@
 
 ## Hermes
 
-**20260528 Note**: More updated guidelines for deployment where integrated into the template. Please see https://github.com/mmartial/unraid-templates/issues/8#issuecomment-4570170067 for details. This is also applicable if you updated the container following ANY hermes agent container update.
+**20260528 Note**: More updated guidelines for deployment were integrated into the template. Please see https://github.com/mmartial/unraid-templates/issues/8#issuecomment-4570170067 for details. This is also applicable if you updated the container following ANY hermes agent container update.
 
 **20260510 Note**: New guidelines for deployment https://hermes-agent.nousresearch.com/docs/user-guide/docker allowed us to remove the Dashboard container. If you installed before this release, delete both containers and reinstall the agent. A note on the TUI: after some permission issues are resolved (https://github.com/NousResearch/hermes-agent/issues/23402), the TUI within the Dashboard should be functional.
 
