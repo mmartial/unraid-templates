@@ -43,9 +43,9 @@ This template is based on the official Hermes Workspace Docker image, updates ar
     <DonateLink/>
     <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
 
-    <Config Name="HERMES_API_URL" Target="HERMES_API_URL" Default="http://HermesAgent:8642" Mode="" Description="URL for the Hermes API" Type="Variable" Display="always" Required="true" Mask="false">http://HermesAgent:8642</Config>
+    <Config Name="HERMES_API_URL" Target="HERMES_API_URL" Default="http://Hermes-Agent:8642" Mode="" Description="URL for the Hermes API" Type="Variable" Display="always" Required="true" Mask="false">http://Hermes-Agent:8642</Config>
     <Config Name="HERMES_API_TOKEN" Target="HERMES_API_TOKEN" Default="" Mode="" Description="Must match API_SERVER_KEY on the hermes-agent side when that is set" Type="Variable" Display="always" Required="true" Mask="false">bd3db74dd31a13c4f23c137eca542a1ae76d403d5dc6453926820e9e7b9e28a4</Config>
-    <Config Name="HERMES_DASHBOARD_URL" Target="HERMES_DASHBOARD_URL" Default="http://HermesAgent:9119" Mode="" Description="URL for the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">http://HermesAgent:9119</Config>
+    <Config Name="HERMES_DASHBOARD_URL" Target="HERMES_DASHBOARD_URL" Default="http://Hermes-Agent:9119" Mode="" Description="URL for the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">http://Hermes-Agent:9119</Config>
 
     <Config Name="Config Unraid location" Target="/.hermes" Default="/mnt/user/appdata/hermes-workspace/config" Mode="rw" Description="Location where the container stores the tool configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-workspace/config</Config>
     <Config Name="Workspace Unraid location" Target="/workspace" Default="/mnt/user/appdata/hermes-workspace/workspace" Mode="rw" Description="Location where various workspaces can be created" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-workspace/workspace</Config>
