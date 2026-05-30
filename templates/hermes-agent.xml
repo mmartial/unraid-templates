@@ -14,7 +14,7 @@
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <ExtraParams/>
-    <Requires>This template's WebUI is the Hermes Dashboard. To access the gateway, connect to port 8642 (running in API server mode). Make sure to use the other "Hermes" components from the same maintainer.</Requires>
+    <Requires>Important: the template requires a shared docker volume to share the hermes sources with the WebUI; if you have autoamtic container updates enabled, you will need to recreate the docker volume each time as described in the notes, or manually update hermes (and disable automatic updates for the container). This template's WebUI is the Hermes Dashboard. To access the gateway, connect to port 8642 (running in API server mode). Make sure to use the other "Hermes" components from the same maintainer.</Requires>
     <PostArgs>gateway run</PostArgs>
     <Overview>
 Hermes Agent is a local, self-improving AI agent built by Nous Research, with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, and builds a deepening model of who you are across sessions.&#xD;
@@ -33,6 +33,8 @@ source .venv/bin/activate&#xD;
 hermes&#xD;
 
 Please see https://github.com/mmartial/unraid-templates/issues/2#issuecomment-4327179027 for a note about the need to use a Docker shared volume, and https://github.com/mmartial/unraid-templates/issues/8#issuecomment-4570170067 for details on steps required to update the shared docker volume when the underlying image is updated.
+
+It is also possible to disable autoamtic container update and instead use "hermes update" is another command line that can be run inside the container to update the shared volume with the latest sources from GirHub.
 
 Other Hermes templates are also available from the same maintainer.&#xD;
 

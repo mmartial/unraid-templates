@@ -14,7 +14,7 @@
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <ExtraParams/>
-    <Requires>An already running "Hermes Agent" from the same maintainer. Do not start the WebUI without it.</Requires>
+    <Requires>An already running "Hermes Agent" from the same maintainer. Do not start the WebUI without it. If you update the main agent container or update hermes, you will need to restart the WebUI container.</Requires>
     <PostArgs/>
     <Overview>
 Hermes Agent is a sophisticated autonomous agent that lives on your server, accessed via a terminal or messaging apps, that remembers what it learns and gets more capable the longer it runs.&#xD;
