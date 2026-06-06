@@ -17,15 +17,15 @@
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda12.9-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.9</TagDescription>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.9 -- current latest, needed for Torch 2.12 support</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda12.8-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.8 (current latest) -- minimum CUDA version needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.8 -- minimum CUDA version needed for Blackwell (inc RTX 50xx) hardware</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda12.6-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 12.6 (current latest) -- last version to support GTX 10xx GPUs</TagDescription>
+        <TagDescription>Ubuntu 24.04 with CUDA 12.6 -- last version to support GTX 10xx GPUs</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda12.5-latest</Tag>
@@ -38,10 +38,6 @@
     <Branch>
         <Tag>ubuntu22_cuda12.3-latest</Tag>
         <TagDescription>Ubuntu 22.04 with CUDA 12.3</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>ubuntu22_cuda12.2-latest</Tag>
-        <TagDescription>Ubuntu 22.04 with CUDA 12.2</TagDescription>
     </Branch>
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
     <Project>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Project>
@@ -85,8 +81,11 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2026-01-21</Date>
+    <Date>2026-06-05</Date>
     <Changes>
+### 20260605
+- Added optional UPDATE_UV environment variable (default is true)
+- Deprecated CUDA 12.2 image
 ### 20260121
 - Adding TORCH_LOCK to lock a specific version of PyTorch, Torch Vision and Torch Audio -- Must set the CUDA backend to use. Must manually add the variable to use it on Unraid.
 ### 20260110
