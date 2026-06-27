@@ -45,6 +45,7 @@ If you encounter issues with this template (not the underlying application), ple
     <Date>2026-05-10</Date>
     <Changes>
 This template is based on the official Hermes Agent Docker image, updates are pulled from that image.&#xD;
+20260626: Update following deprecation of HERMES_DASHBOARD_INSECURE.&#xD;
 20260510: Removed Dashboard since it is now integrated with the Gateway per https://hermes-agent.nousresearch.com/docs/user-guide/docker&#xD;
 20260418: Added to Unraid CA
     </Changes>
@@ -62,7 +63,10 @@ This template is based on the official Hermes Agent Docker image, updates are pu
     <Config Name="HERMES_DASHBOARD" Target="HERMES_DASHBOARD" Default="true" Mode="" Description="Enable the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="HERMES_DASHBOARD_HOST" Target="HERMES_DASHBOARD_HOST" Default="0.0.0.0" Mode="" Description="Bind Host for the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="HERMES_DASHBOARD_TUI" Target="HERMES_DASHBOARD_TUI" Default="1" Mode="" Description="Set to 1 to expose the in-browser Chat tab" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
-    <Config Name="HERMES_DASHBOARD_INSECURE" Target="HERMES_DASHBOARD_INSECURE" Default="1" Mode="" Description="Set to 1 to bind without the OAuth auth gate. Only use on trusted networks behind a reverse proxy without the OAuth contract — the dashboard exposes API keys and session data" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
+
+    <Config Name="HERMES_DASHBOARD_BASIC_AUTH_USERNAME" Target="HERMES_DASHBOARD_BASIC_AUTH_USERNAME" Default="admin" Mode="" Description="Username for basic authentication on the Hermes Dashboard" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+    <Config Name="HERMES_DASHBOARD_BASIC_AUTH_PASSWORD" Target="HERMES_DASHBOARD_BASIC_AUTH_PASSWORD" Default="pa33_w0rd" Mode="" Description="Password for basic authentication on the Hermes Dashboard (unless changed: pa33_w0rd)" Type="Variable" Display="always" Required="true" Mask="false">pa33_w0rd</Config>
+    <Config Name="HERMES_DASHBOARD_BASIC_AUTH_SECRET" Target="HERMES_DASHBOARD_BASIC_AUTH_SECRET" Default="73AvrCUlil3ORKTfeeghTXV8BOT8lvIjB3cIHg+OtIo=" Mode="" Description="Secret for basic authentication on the Hermes Dashboard (generate one with: openssl rand -hex 32)" Type="Variable" Display="always" Required="true" Mask="false">73AvrCUlil3ORKTfeeghTXV8BOT8lvIjB3cIHg+OtIo=</Config>
 
     <Config Name="HERMES_UID" Target="HERMES_UID" Default="99" Mode="" Description="UID to use for content" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
     <Config Name="HERMES_GID" Target="HERMES_GID" Default="100" Mode="" Description="GID to use for content" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
