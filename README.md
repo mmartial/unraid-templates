@@ -63,6 +63,7 @@ Available components:
 Templates can still be found in the `templates/obsolete` folder.
 
 - 20260629: "Hermes WebUI" template
+  - I undertand this might be inconvenient to some users. Unfortunately, the requirement for a named Docker volume adds a complexity for end-users. Please let me know when [docker-compose.two-container.yml](https://github.com/nesquena/hermes-webui/blob/master/docker-compose.two-container.yml) does not require a named volume (such as `hermes-agent-src`) and I will revisit the template.
 
 ## Misc: Unraid template howto
 
