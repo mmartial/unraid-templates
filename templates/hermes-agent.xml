@@ -74,5 +74,7 @@ This template is based on the official Hermes Agent Docker image, updates are pu
     <Config Name="HERMES_HOME" Target="HERMES_HOME" Default="/home/hermes/.hermes" Mode="" Description="Home directory for Hermes data" Type="Variable" Display="always" Required="true" Mask="false">/home/hermes/.hermes</Config>
     <Config Name="HERMES_HOME Unraid location" Target="/home/hermes/.hermes" Default="/mnt/user/appdata/hermes-agent/hermes-home" Mode="rw" Description="Location where the container stores all user data (config, API keys, sessions, skills, memories)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent/hermes-home</Config>
     
+    <Config Name="/opt/data" Target="/opt/data" Default="/mnt/user/appdata/hermes-agent/opt-data" Mode="rw" Description="Persistent location for /opt/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent/opt-data</Config>
+
     <Config Name="Hermes Shared Source Volume" Target="/opt/hermes" Default="hermes_shared_volume" Mode="rw" Description="A Docker named volume (do not change: using a folder path will not work) that auto-populates from the image (target must be the same for all hermes templates)" Type="Path" Display="advanced" Required="true" Mask="false">hermes_shared_volume</Config>
 </Container>
