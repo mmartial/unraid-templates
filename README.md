@@ -30,14 +30,7 @@
 
 (Advanced Deployment/Virtual Machine alternative: if you are considering running Hermes in its own VM, check [Hermes in a VM](https://www.gkr.one/blg-20260405-openclaw-hermes))
 
-Important: To share content across the agent and webui docker images, we must use a named Docker volume.
-With a named volume, when you start a container and mount a new, empty named volume to a directory that already contains data within the container image, Docker automatically copies the existing files from the image into the volume.
-This "auto-copy" feature does not work with bind mounts (linking a specific folder on your host: if you bind mount an empty host folder to /app/data, the container's folder will appear empty).
-If the volume already contains data (e.g., from a previous run, an image update, etc), Docker will not overwrite it with the image's content; it will simply mount what is already in the volume. This is important for Hermes in particular, as it is the end-user's responsibility to docker volume rm hermes_shared_volume to get the content to update itself or use hermes update or the WebUI to update it.
-
 Always start the "Hermes Agent" first before starting the other containers.
-
-To start a fresh deployment/repair a broken Agent/WebUI, you will need to get a shell on your Unraid system and delete the docker shared volume using `docker volume rm hermes_shared_volume`
 
 To get access to the `hermes` command line (for configuration, update, etc):
 
@@ -53,8 +46,6 @@ hermes
 # hermes update
 ```
 
-Unraid auto-update note: The shared volume is required for Hermes WebUI to work, and it provides an update mechanism for the Agent/Dashboard and itself (you may still have to restart the container after the update). Because Docker shared volumes that already contain content will not have their content updated when a new data source is provided, if you have your container images set to auto-update, disable it for this stack. 
-
 Available components:
 
 - [Hermes Agent](https://github.com/nousresearch/hermes-agent) and its Dashboard
@@ -62,16 +53,16 @@ Available components:
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool or the underlying Docker container, use [https://github.com/nousresearch/hermes-agent/issues](https://github.com/nousresearch/hermes-agent/issues)
 
-- [Hermes WebUI](https://github.com/nesquena/hermes-webui)
-  - Check the project's documentation for usage information.
-  - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
-  - For issues with the tool or the underlying Docker container, use [https://github.com/nesquena/hermes-webui/issues](https://github.com/nesquena/hermes-webui/issues)
-
 - [Hermes Workspace](https://github.com/outsourc-e/hermes-workspace)
   - Check the project's documentation for usage information.
   - For Unraid templates issues, use [https://github.com/mmartial/unraid-templates/issues](https://github.com/mmartial/unraid-templates/issues)
   - For issues with the tool or the underlying Docker container, use [https://github.com/outsourc-e/hermes-workspace/issues](https://github.com/outsourc-e/hermes-workspace/issues)
-  - Note: this container does not require the Docker shared volume. If you do not intend to use Hermes WebUI you can delete it from the "Advanced" settings in the "Hermes Agent" template (and will not have to perform `docker volume rm ...` for example)
+
+## Deprecated
+
+Templates can still be found in the `templates/obsolete` folder.
+
+- 20260629: "Hermes WebUI" template
 
 ## Misc: Unraid template howto
 
