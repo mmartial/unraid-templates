@@ -4,8 +4,12 @@
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
     <Branch>
+        <Tag>ubuntu26_cuda13.3-latest</Tag>
+        <TagDescription>Ubuntu 26.04 with CUDA 13.3</TagDescription>
+    </Branch>
+    <Branch>
         <Tag>ubuntu24_cuda13.2-latest</Tag>
-        <TagDescription>Ubuntu 24.04 with CUDA 13.2 </TagDescription>
+        <TagDescription>Ubuntu 24.04 with CUDA 13.2</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda13.1-latest</Tag>
@@ -81,8 +85,11 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2026-06-05</Date>
+    <Date>2026-08-05</Date>
     <Changes>
+### 20260805
+- Added compatibility for first Ubuntu 26.04 images (CUDA 13.3)
+- Included full ffmpeg/sqlite3 for sub-scripts compilations & video support
 ### 20260605
 - Added optional UPDATE_UV environment variable (default is true)
 - Deprecated CUDA 12.2 image
