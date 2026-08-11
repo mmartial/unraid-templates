@@ -89,7 +89,7 @@ Note:&#xD;
     <Changes>
 ### 20260805
 - Added compatibility for first Ubuntu 26.04 images (CUDA 13.3)
-- Included full ffmpeg/sqlite3 for sub-scripts compilations & video support
+- Included full ffmpeg/sqlite3 for sub-scripts compilations and video support
 ### 20260605
 - Added optional UPDATE_UV environment variable (default is true)
 - Deprecated CUDA 12.2 image
