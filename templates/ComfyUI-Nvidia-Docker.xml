@@ -35,14 +35,6 @@
         <Tag>ubuntu24_cuda12.5-latest</Tag>
         <TagDescription>Ubuntu 24.04 with CUDA 12.5</TagDescription>
     </Branch>
-    <Branch>
-        <Tag>ubuntu22_cuda12.4-latest</Tag>
-        <TagDescription>Ubuntu 22.04 with CUDA 12.4</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>ubuntu22_cuda12.3-latest</Tag>
-        <TagDescription>Ubuntu 22.04 with CUDA 12.3</TagDescription>
-    </Branch>
     <Support>https://forums.unraid.net/topic/172874-support-comfyui-nvidia-docker/</Support>
     <Project>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Project>
     <TemplateURL>https://raw.githubusercontent.com/mmartial/unraid-templates/main/templates/ComfyUI-Nvidia-Docker.xml</TemplateURL>
@@ -85,8 +77,12 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2026-08-05</Date>
+    <Date>2026-09-06</Date>
     <Changes>
+### 20260906:
+- Installation of the comfy CLI in the virtual env
+- temporary addition: userscripts_dir/06-manager_csrf_patch.sh that fixes ComfyUI-Manager 4.2.x CSRF NoneType crash when updating with legacy UI (note: userscripts_dir must be manually added for Unraid use)
+- Deprecation of remaining Ubuntu 22 based images
 ### 20260805
 - Added compatibility for first Ubuntu 26.04 images (CUDA 13.3)
 - Included full ffmpeg/sqlite3 for sub-scripts compilations and video support
