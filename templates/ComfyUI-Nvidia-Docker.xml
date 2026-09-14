@@ -76,8 +76,10 @@ Note:&#xD;
 - There are multiple version of the base image available, please select the one that fits your needs best. The name of the tag is the Ubuntu version followed by the CUDA version. Latest is set to point to the most recent combination as it should include the most recent software updates. For the complete list of supported versions, please see the GitHub repository&#xD;
     </Overview>
     <Readme>https://github.com/mmartial/ComfyUI-Nvidia-Docker</Readme>
-    <Date>2026-09-13</Date>
+    <Date>2026-09-14</Date>
     <Changes>
+### 20260914:
+- Fix for issue 143
 ### 20260913:
 - Added ALLOW_GIT_URL_INSTALL and ALLOW_PIP_INSTALL (enabling either will force USE_SOCAT)
 - added enforcement of "authorized values" for variables
