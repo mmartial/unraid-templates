@@ -4,12 +4,12 @@
     <Repository>mmartial/comfyui-nvidia-docker</Repository>
     <Registry>https://hub.docker.com/r/mmartial/comfyui-nvidia-docker</Registry>
     <Branch>
-        <Tag>ubuntu26_cuda13.4-latest</Tag>
-        <TagDescription>Ubuntu 26.04 with CUDA 13.4</TagDescription>
+        <Tag>ubuntu24_cuda13.4-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 13.4</TagDescription>
     </Branch>
     <Branch>
-        <Tag>ubuntu26_cuda13.3-latest</Tag>
-        <TagDescription>Ubuntu 26.04 with CUDA 13.3</TagDescription>
+        <Tag>ubuntu24_cuda13.3-latest</Tag>
+        <TagDescription>Ubuntu 24.04 with CUDA 13.3</TagDescription>
     </Branch>
     <Branch>
         <Tag>ubuntu24_cuda13.2-latest</Tag>
@@ -84,6 +84,7 @@ Note:&#xD;
     <Changes>
 ### 20261010:
 - Newer version of ComfyUI Manager supports personal_cloud, avoiding enabling USE_SOCAT automatically
+- Temporarily removing Ubuntu 26 images (see Issue 145)
 ### 20260914:
 - Fix for issue 143
 ### 20260913:
